@@ -1,0 +1,23 @@
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Space Mono', monospace !important;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+p {
+    line-height: 180%;
+    font-size: 16px;
+}
+
+pre {
+    font-family: 'Space Mono', monospace !important;
+    font-size: 15px !important;
+}
