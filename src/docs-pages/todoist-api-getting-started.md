@@ -1,17 +1,17 @@
 ---
-path: "/google-spreadsheet-api-getting-started"
+path: "/todoist-api-getting-started"
 date: "2019-10-04"
-title: "Google SpreadSheet"
+title: "Todoist"
 excert: 'Database, basically google spreadsheets meets Microsoft Access'
 https: true
 auth: 'apiKey'
-category: 'Database'
+category: 'Productivity'
 pricing: ['free','pro']
 officialDocsLink: 'https://airtable.com/api'
 author: "Mohd Danish"
 twitter: "https://twitter.com/mddanishyusuf"
 authorPic: "./authors/mddanishyusuf.png"
-featuredImage: "./images/google-spreedsheet.png"
+featuredImage: "./images/todoist.png"
 ---
 
 If you building any application based on the google apis service then you need private key and client email to access their services.

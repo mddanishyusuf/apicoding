@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Navbar, Nav } from 'react-bootstrap'
 
+import '../styles/header.scss'
+
 const Header = ({ siteTitle }) => (
     <header>
         <div className="header-navbar">
@@ -14,7 +16,9 @@ const Header = ({ siteTitle }) => (
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
                         <Nav>
-                            <Link to="/marketplace">marketplace</Link>
+                            <a href="https://nocodeapi.com" target="_blank">
+                                NoCodeAPI
+                            </a>
                         </Nav>
                     </Nav>
                     <Nav>

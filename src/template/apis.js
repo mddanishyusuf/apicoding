@@ -15,10 +15,6 @@ export default function Template({
         <Layout>
             <SEO title="Home" />
             <div className="apis-container">
-                <div className="apis-header">
-                    <h1>Use Cases</h1>
-                    <div className="sub-heading">Talking about building web application with NoCodeAPI</div>
-                </div>
                 <div className="apis-items">
                     <div className="row">
                         {allNodes.length > 0 &&
@@ -36,13 +32,22 @@ export default function Template({
                                                     <Img
                                                         fluid={node.frontmatter.featuredImage.childImageSharp.fluid}
                                                         style={{
-                                                            width: '40px',
-                                                            height: '40px',
+                                                            width: '35px',
+                                                            height: '35px',
                                                         }}
                                                     />
-                                                    <h2>{node.frontmatter.title}</h2>
+                                                    <div className="card-title">
+                                                        <h2>{node.frontmatter.title}</h2>
+                                                        <span>{node.frontmatter.category}</span>
+                                                    </div>
                                                 </div>
                                             </Link>
+                                        </div>
+                                        <div className="card-content">
+                                            <p>{node.frontmatter.excert}</p>
+                                            <div className="read-more">
+                                                <Link to={node.frontmatter.path}>Read Docs</Link>
+                                            </div>
                                         </div>
                                     </div>
                                     {/* <Link to={node.frontmatter.path}>
@@ -85,6 +90,7 @@ export const pageQuery = graphql`
                     path
                     title
                     excert
+                    category
                     featuredImage {
                         colors {
                             lightVibrant

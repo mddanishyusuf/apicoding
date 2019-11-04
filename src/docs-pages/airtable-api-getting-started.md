@@ -2,10 +2,10 @@
 path: "/airtable-api-getting-started"
 date: "2019-10-04"
 title: "Airtable"
-excert: 'Database, basically google spreadsheets meets Microsoft Access'
+excert: 'Database, basically google spreadsheets meets Microsoft Access. With Airtable API we can access our tables rows.'
 https: true
 auth: 'apiKey'
-category: 'Documents & Productivity'
+category: 'Database'
 pricing: ['free','pro']
 officialDocsLink: 'https://airtable.com/api'
 author: "Mohd Danish"

@@ -1,17 +1,17 @@
 ---
-path: "/google-spreadsheet-api-getting-started"
+path: "/contentful-api-getting-started"
 date: "2019-10-04"
-title: "Google SpreadSheet"
-excert: 'Database, basically google spreadsheets meets Microsoft Access'
+title: "Contentful"
+excert: 'Contentful is an Headless CMS aka content management system. You can stream your content into your applications with their APIs'
 https: true
 auth: 'apiKey'
-category: 'Database'
+category: 'Headless CMS'
 pricing: ['free','pro']
 officialDocsLink: 'https://airtable.com/api'
 author: "Mohd Danish"
 twitter: "https://twitter.com/mddanishyusuf"
 authorPic: "./authors/mddanishyusuf.png"
-featuredImage: "./images/google-spreedsheet.png"
+featuredImage: "./images/contentful.png"
 ---
 
 If you building any application based on the google apis service then you need private key and client email to access their services.

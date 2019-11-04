@@ -2,10 +2,10 @@
 path: "/google-analytics-api-getting-started"
 date: "2019-10-04"
 title: "Google Analytics"
-excert: 'Database, basically google spreadsheets meets Microsoft Access'
+excert: 'Google Analytics is an tool to track users activities on your website, videos. Also, you can make your website open page with API'
 https: true
 auth: 'apiKey'
-category: 'Documents & Productivity'
+category: 'Tracking'
 pricing: ['free','pro']
 officialDocsLink: 'https://airtable.com/api'
 author: "Mohd Danish"

@@ -1,17 +1,17 @@
 ---
-path: "/google-spreadsheet-api-getting-started"
+path: "/cloudinary-api-getting-started"
 date: "2019-10-04"
-title: "Google SpreadSheet"
-excert: 'Database, basically google spreadsheets meets Microsoft Access'
+title: "Cloudinary"
+excert: 'Cloudinary is an media hosting plateform like images, videos. Use this API to automate your image & video remote processing.'
 https: true
 auth: 'apiKey'
-category: 'Database'
+category: 'Cloud Storage'
 pricing: ['free','pro']
 officialDocsLink: 'https://airtable.com/api'
 author: "Mohd Danish"
 twitter: "https://twitter.com/mddanishyusuf"
 authorPic: "./authors/mddanishyusuf.png"
-featuredImage: "./images/google-spreedsheet.png"
+featuredImage: "./images/cloudinary.png"
 ---
 
 If you building any application based on the google apis service then you need private key and client email to access their services.

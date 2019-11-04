@@ -1,0 +1,30 @@
+.docs-post-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+
+    .docs-meta {
+
+
+        h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .excert {
+            font-size: 14px;
+            color: #4e4e4e;
+            padding: 10px 0px;
+        }
+
+        .view-original {
+            text-decoration: none;
+            color: #000;
+        }
+    }
+
+    .docs-content {
+        padding: 0px 20px;
+    }
+}

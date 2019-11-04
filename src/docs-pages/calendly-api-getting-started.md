@@ -1,17 +1,17 @@
 ---
-path: "/google-spreadsheet-api-getting-started"
+path: "/calendly-api-getting-started"
 date: "2019-10-04"
-title: "Google SpreadSheet"
-excert: 'Database, basically google spreadsheets meets Microsoft Access'
+title: "Calendly"
+excert: 'Calendly is an online tool to schedule your meetings with ease. So, with their API you can embeded into your system'
 https: true
 auth: 'apiKey'
-category: 'Database'
+category: 'Productivity'
 pricing: ['free','pro']
 officialDocsLink: 'https://airtable.com/api'
 author: "Mohd Danish"
 twitter: "https://twitter.com/mddanishyusuf"
 authorPic: "./authors/mddanishyusuf.png"
-featuredImage: "./images/google-spreedsheet.png"
+featuredImage: "./images/calendly.png"
 ---
 
 If you building any application based on the google apis service then you need private key and client email to access their services.

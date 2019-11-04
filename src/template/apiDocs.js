@@ -1,9 +1,11 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import { ExternalLink } from 'react-feather'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import '../styles/api-docs.scss'
 
 const readingTime = require('reading-time')
 
@@ -16,38 +18,26 @@ export default function Template({
     return (
         <Layout>
             <SEO title={frontmatter.title} metadata={frontmatter} />
-            <div className="blog-post-container">
-                <div className="blog-post">
-                    <h1>{frontmatter.title}</h1>
-                    <div className="excert">{frontmatter.excert}</div>
-                    <div className="date">
-                        {frontmatter.date} | {readingTime(html).text}
-                    </div>
-
-                    <div className="about-author">
+            <div className="docs-post-container">
+                <div className="row">
+                    <div className="col-md-3 docs-meta">
                         <Img
-                            fluid={frontmatter.authorPic.childImageSharp.fluid}
+                            fluid={frontmatter.featuredImage.childImageSharp.fluid}
                             style={{
-                                width: '40px',
-                                height: '40px',
+                                width: '80px',
+                                height: '80px',
                             }}
                         />
-                        <div className="author">
-                            <div className="name">{frontmatter.author}</div>
-                            <a href={frontmatter.twitter}>Twitter</a>
-                        </div>
+                        <h2>{frontmatter.title}</h2>
+                        <div className="excert">{frontmatter.excert}</div>
+                        <a className="view-original" href={frontmatter.officialDocsLink}>
+                            Original Docs <ExternalLink size={15} />
+                        </a>
+                        <hr />
+                        <div className="date">{frontmatter.date}</div>
                     </div>
-                    <div className="post-content" dangerouslySetInnerHTML={{ __html: html }} />
-                    <div className="written-by">
-                        Written by{' '}
-                        <Img
-                            fluid={frontmatter.authorPic.childImageSharp.fluid}
-                            style={{
-                                width: '40px',
-                                height: '40px',
-                            }}
-                        />{' '}
-                        {frontmatter.author} (<a href={frontmatter.twitter}>follow on Twitter</a>)
+                    <div className="col-md-9 docs-content">
+                        <div className="post-content" dangerouslySetInnerHTML={{ __html: html }} />
                     </div>
                 </div>
             </div>
@@ -59,12 +49,13 @@ export const pageQuery = graphql`
         markdownRemark(frontmatter: { path: { eq: $path } }) {
             html
             frontmatter {
-                date(formatString: "MMMM DD, YYYY")
+                date(formatString: "DD-MMM-YY")
                 path
                 title
                 excert
                 author
                 twitter
+                officialDocsLink
                 featuredImage {
                     publicURL
                     colors {
