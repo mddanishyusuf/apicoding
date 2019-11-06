@@ -74,9 +74,7 @@ function SEO({ description, lang, meta, metadata, title, keywords }) {
                     content: metaImage,
                 },
             ].concat(meta)}
-        >
-            <script src="https://embed.runkit.com" />
-        </Helmet>
+        />
     )
 }
 
@@ -87,7 +85,7 @@ SEO.defaultProps = {
     metadata: {
         excert: '',
     },
-    keywords: `public, list, movie, cryptocurrency, bundle APIs, free, open, APIs, github, collective, list, IoT, github, repository, development, games, comics, science, open data, music`,
+    keywords: `public, apis, docs, simple, list, movie, cryptocurrency, bundle APIs, free, open, APIs, github, collective, list, IoT, github, repository, development, games, comics, science, open data, music`,
 }
 
 SEO.propTypes = {

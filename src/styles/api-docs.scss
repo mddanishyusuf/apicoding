@@ -21,10 +21,16 @@
         .view-original {
             text-decoration: none;
             color: #000;
+            font-size: 14px;
         }
     }
 
     .docs-content {
         padding: 0px 20px;
+        font-size: 15px;
+
+        p {
+            font-size: 15px;
+        }
     }
 }

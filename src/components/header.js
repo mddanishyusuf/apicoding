@@ -10,23 +10,27 @@ const Header = ({ siteTitle }) => (
         <div className="header-navbar">
             <Navbar collapseOnSelect expand="lg">
                 <Navbar.Brand>
-                    <Link to="/">🗎 APIs Docs</Link>
+                    <Link to="/">APIs Docs</Link>
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav>
+                        {/* <Nav>
                             <a href="https://nocodeapi.com" target="_blank">
                                 NoCodeAPI
                             </a>
-                        </Nav>
+                        </Nav> */}
                     </Nav>
                     <Nav>
                         <Nav>
-                            <Link to="/pricing">pricing</Link>
+                            <a href="https://nocodeapi.com" target="_blank">
+                                Feedback
+                            </a>
                         </Nav>
                         <Nav>
-                            <Link to="/blog">blog</Link>
+                            <a href="https://nocodeapi.com" target="_blank">
+                                Twitter
+                            </a>
                         </Nav>
                     </Nav>
                 </Navbar.Collapse>

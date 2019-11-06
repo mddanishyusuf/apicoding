@@ -17,7 +17,7 @@ export default function Template({
 
     return (
         <Layout>
-            <SEO title={frontmatter.title} metadata={frontmatter} />
+            <SEO title={`${frontmatter.title} Simple And Easy Docs`} metadata={frontmatter} />
             <div className="docs-post-container">
                 <div className="row">
                     <div className="col-md-3 docs-meta">

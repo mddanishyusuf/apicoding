@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 
 import Header from './header'
+import Footer from './footer'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../styles/layout.scss'
 
@@ -23,7 +24,7 @@ const Layout = ({ children }) => {
             <div>
                 <main>{children}</main>
                 {/* {list down most used apis link for SEO} */}
-                {/* <Footer /> */}
+                <Footer />
             </div>
         </>
     )

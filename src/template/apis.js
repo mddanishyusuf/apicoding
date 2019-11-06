@@ -13,7 +13,10 @@ export default function Template({
     // const { frontmatter, html } = markdownRemark
     return (
         <Layout>
-            <SEO title="Home" />
+            <SEO
+                title="Public APIs Docs in Simple Way"
+                description="APIs docs is an website for public and free APIs simple documentation. How to use Public APIs and INtegrate into React, Angular, JAMstack Applications in easy and simple way"
+            />
             <div className="apis-container">
                 <div className="apis-items">
                     <div className="row">
