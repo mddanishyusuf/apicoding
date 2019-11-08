@@ -37,16 +37,19 @@ const Footer = () => {
                                 <b>Other Products</b>
                             </li>
                             <li>
-                                <a href="https://public-apis.xyz">public-apis.xyz</a>
+                                <a href="https://nocodeapi.com" target="_blank" rel="noopener noreferrer">nocodeapi.com</a>
                             </li>
                             <li>
-                                <a href="https://tweetjobs.dev">tweetjobs.dev</a>
+                                <a href="https://public-apis.xyz" target="_blank" rel="noopener noreferrer">public-apis.xyz</a>
                             </li>
                             <li>
-                                <a href="https://dailyhack.xyz">dailyhack.xyz</a>
+                                <a href="https://tweetjobs.dev" target="_blank" rel="noopener noreferrer">tweetjobs.dev</a>
                             </li>
                             <li>
-                                <a href="https://apiwithgithub.com/" to="/dashboard/marketplace">
+                                <a href="https://dailyhack.xyz" target="_blank" rel="noopener noreferrer">dailyhack.xyz</a>
+                            </li>
+                            <li>
+                                <a href="https://apiwithgithub.com/" target="_blank" rel="noopener noreferrer">
                                     apiwithgithub.com
                                 </a>
                             </li>
@@ -58,10 +61,10 @@ const Footer = () => {
                                 <b>Menu</b>
                             </li>
                             <li>
-                                <a href="">Feedback</a>
+                                <a href="https://airtable.com" target="_blank" rel="noopener noreferrer">Feedback</a>
                             </li>
                             <li>
-                                <a href="">Need Help?</a>
+                                <a href="https://airtable.com" target="_blank" rel="noopener noreferrer">Need Help?</a>
                             </li>
                         </ul>
                     </div>

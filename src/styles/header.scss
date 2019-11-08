@@ -13,6 +13,7 @@ header {
             a {
                 text-decoration: none;
                 color: #000;
+                font-size: 14px;
             }
 
 
@@ -27,3 +28,39 @@ header {
         }
     }
 }
+
+.nav-menu {
+    display: grid;
+    grid-template-columns: 120px auto 200px;
+    padding: 5px 20px;
+
+    .input-group {
+        width: 100% !important;
+
+        input {
+            background-color: rgba(0,0,0,.05);
+            border: none;
+            font-size: 16px;
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+        }
+
+        .input-group-prepend {
+            border: none !important;
+            font-size: 16px;
+            cursor: pointer;
+            .input-group-text {
+                border: none;
+            }
+        }
+    }
+}
+
+.navbar-expand-lg {
+    @media screen and (min-width: 992px) {
+        justify-content: space-between !important;
+    }
+}
+

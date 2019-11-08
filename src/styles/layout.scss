@@ -5,19 +5,19 @@ html {
 }
 
 body {
-    font-family: 'Space Mono', monospace !important;
+    font-family: 'Poppins', sans-serif !important;
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
 }
 
-p {
-    line-height: 180%;
-    font-size: 16px;
+p, ul li, pre, code {
+    line-height: 180% !important;
+    font-size: 16px !important;
 }
 
 pre {
-    font-family: 'Space Mono', monospace !important;
+    font-family: 'Poppins', sans-serif !important;
     font-size: 15px !important;
 }

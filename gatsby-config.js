@@ -48,8 +48,8 @@ module.exports = {
             options: {
                 fonts: [
                     {
-                        family: `Space Mono`,
-                        variants: [`400`, `700`],
+                        family: `Poppins`,
+                        variants: [`400`, `500`, `600`, `700`],
                     },
                 ],
             },

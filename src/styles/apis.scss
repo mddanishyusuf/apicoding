@@ -1,7 +1,7 @@
 .apis-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 60px 20px;
 }
 
 .api-card {
@@ -18,7 +18,7 @@
             .head-content {
                 display: flex;
                 align-items: center;
-                padding: 8px 12px;
+                padding: 10px 12px;
 
                 img {
                     border-radius: 50%;
@@ -31,7 +31,7 @@
 
                     h2 {
                         font-size: 17px;
-                        font-weight: 700;
+                        font-weight: 600;
                         line-height: 17px;
                         margin: 0;
                     }
