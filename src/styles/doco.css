@@ -1,0 +1,161 @@
+
+
+
+/*---------------------- Syntax Highlighting -----------------------------*/
+
+td.linenos { background-color: #f0f0f0; padding-right: 10px; }
+span.lineno { background-color: #f0f0f0; padding: 0 5px 0 5px; }
+/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.gatsby-highlight pre {
+    padding: 1rem !important;
+    margin: 20px 0px !important;
+    background: #f7fafc !important;
+}
+
+.gatsby-highlight pre code {
+  /* display: block; padding: 0.5em;
+  color: #000;
+  background: #f8f8ff */
+
+  display: block;
+  overflow-x: auto;
+  color: #000;
+}
+
+.gatsby-highlight pre .comment,
+.gatsby-highlight pre .template_comment,
+.gatsby-highlight pre .diff .header,
+.gatsby-highlight pre .javadoc {
+  color: #408080;
+  font-style: italic
+}
+
+.gatsby-highlight pre .keyword,
+.gatsby-highlight pre .assignment,
+.gatsby-highlight pre .literal,
+.gatsby-highlight pre .css .rule .keyword,
+.gatsby-highlight pre .winutils,
+.gatsby-highlight pre .javascript .title,
+.gatsby-highlight pre .lisp .title,
+.gatsby-highlight pre .subst {
+  color: #954121;
+  /*font-weight: bold*/
+}
+
+.gatsby-highlight pre .number,
+.gatsby-highlight pre .hexcolor {
+  color: #40a070
+}
+
+.gatsby-highlight pre .string,
+.gatsby-highlight pre .tag .value,
+.gatsby-highlight pre .phpdoc,
+.gatsby-highlight pre .tex .formula {
+  color: #219161;
+}
+
+.gatsby-highlight pre .title,
+.gatsby-highlight pre .id {
+  color: #19469D;
+}
+.gatsby-highlight pre .params {
+  color: #00F;
+}
+
+.gatsby-highlight pre .javascript .title,
+.gatsby-highlight pre .lisp .title,
+.gatsby-highlight pre .subst {
+  font-weight: normal
+}
+
+.gatsby-highlight pre .class .title,
+.gatsby-highlight pre .haskell .label,
+.gatsby-highlight pre .tex .command {
+  color: #458;
+  font-weight: bold
+}
+
+.gatsby-highlight pre .tag,
+.gatsby-highlight pre .tag .title,
+.gatsby-highlight pre .rules .property,
+.gatsby-highlight pre .django .tag .keyword {
+  color: #000080;
+  font-weight: normal
+}
+
+.gatsby-highlight pre .attribute,
+.gatsby-highlight pre .variable,
+.gatsby-highlight pre .instancevar,
+.gatsby-highlight pre .lisp .body,
+.gatsby-highlight pre .attr-value
+{
+  color: #008080
+}
+
+.gatsby-highlight .parameter{
+    color: rgb(0, 0, 255);
+}
+
+.gatsby-highlight .punctuation{
+color: rgb(0, 134, 179)
+}
+
+.gatsby-highlight pre .regexp {
+  color: #B68
+}
+
+.gatsby-highlight pre .class {
+  color: #458;
+  font-weight: bold
+}
+
+.gatsby-highlight pre .symbol,
+.gatsby-highlight pre .ruby .symbol .string,
+.gatsby-highlight pre .ruby .symbol .keyword,
+.gatsby-highlight pre .ruby .symbol .keymethods,
+.gatsby-highlight pre .lisp .keyword,
+.gatsby-highlight pre .tex .special,
+.gatsby-highlight pre .input_number {
+  color: #990073
+}
+
+.gatsby-highlight pre .builtin,
+.gatsby-highlight pre .constructor,
+.gatsby-highlight pre .built_in,
+.gatsby-highlight pre .lisp .title {
+  color: #0086b3
+}
+
+.gatsby-highlight pre .preprocessor,
+.gatsby-highlight pre .pi,
+.gatsby-highlight pre .doctype,
+.gatsby-highlight pre .shebang,
+.gatsby-highlight pre .cdata {
+  color: #999;
+  font-weight: bold
+}
+
+.gatsby-highlight pre .deletion {
+  background: #fdd
+}
+
+.gatsby-highlight pre .addition {
+  background: #dfd
+}
+
+.gatsby-highlight pre .diff .change {
+  background: #0086b3
+}
+
+.gatsby-highlight pre .chunk {
+  color: #aaa
+}
+
+.gatsby-highlight pre .tex .formula {
+  opacity: 0.5;
+}

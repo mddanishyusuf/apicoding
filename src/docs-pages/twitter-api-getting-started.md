@@ -1,17 +1,17 @@
 ---
-path: "/airtable-api-getting-started"
+path: "/twitter-api-getting-started"
 date: "2019-10-04"
-title: "Airtable"
-excert: 'Database, basically google spreadsheets meets Microsoft Access. With Airtable API we can access our tables rows.'
+title: "Twitter"
+excert: 'Send data into your telegram channel, group with simple endpoint.'
 https: true
 auth: 'apiKey'
-category: 'Database'
-pricing: ['free','pro']
-officialDocsLink: 'https://airtable.com/api'
+category: 'Social Networking'
+pricing: ['free']
+officialDocsLink: 'https://developer.twitter.com/en/docs'
 author: "Mohd Danish"
 twitter: "https://twitter.com/mddanishyusuf"
 authorPic: "./authors/mddanishyusuf.png"
-featuredImage: "./images/airtable.png"
+featuredImage: "./images/twitter.png"
 ---
 
 If you building any application based on the google apis service then you need private key and client email to access their services.

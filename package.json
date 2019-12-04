@@ -7,9 +7,12 @@
     "dependencies": {
         "@mdx-js/mdx": "^1.5.1",
         "@mdx-js/react": "^1.5.1",
+        "algoliasearch": "^3.35.1",
         "bootstrap": "^4.3.1",
+        "dotenv": "^8.2.0",
         "gatsby": "^2.17.7",
         "gatsby-image": "^2.2.30",
+        "gatsby-plugin-algolia": "^0.5.0",
         "gatsby-plugin-extract-image-colors": "^0.0.14",
         "gatsby-plugin-manifest": "^2.2.26",
         "gatsby-plugin-mdx": "^1.0.55",

@@ -1,17 +1,17 @@
 ---
-path: "/airtable-api-getting-started"
+path: "/slack-api-getting-started"
 date: "2019-10-04"
-title: "Airtable"
-excert: 'Database, basically google spreadsheets meets Microsoft Access. With Airtable API we can access our tables rows.'
+title: "Slack"
+excert: 'Send data into your telegram channel, group with simple endpoint.'
 https: true
 auth: 'apiKey'
-category: 'Database'
-pricing: ['free','pro']
-officialDocsLink: 'https://airtable.com/api'
+category: 'Automation'
+pricing: ['free']
+officialDocsLink: 'https://api.slack.com/'
 author: "Mohd Danish"
 twitter: "https://twitter.com/mddanishyusuf"
 authorPic: "./authors/mddanishyusuf.png"
-featuredImage: "./images/airtable.png"
+featuredImage: "./images/slack.png"
 ---
 
 If you building any application based on the google apis service then you need private key and client email to access their services.

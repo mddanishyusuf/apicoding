@@ -18,19 +18,140 @@
             padding: 10px 0px;
         }
 
-        .view-original {
+        .view-original, .date {
             text-decoration: none;
             color: #000;
             font-size: 14px;
         }
+
+        .edit-this-doc {
+            background-color: #333;
+            margin: 20px 0px;
+            display: inline-block;
+            color: #fff;
+            padding: 5px 14px;
+            border-radius: 3px;
+            div {
+                display: flex;
+                align-items: center;
+                a {
+                    padding-left: 10px;
+                    font-size: 14px;
+                    text-decoration: none;
+                    color: #fff;
+                }
+            }
+        }
     }
 
     .docs-content {
-        padding: 0px 40px;
-        font-size: 15px;
+        font-size: 17px;
 
-        p {
-            font-size: 15px;
+        img {
+            max-width: 100% !important;
+            border: 1px solid #dadce0 !important;
+            padding: 4px !important;
+            margin-bottom: 20px !important;
+        }
+    
+        p,
+        ul,
+        ol {
+            letter-spacing: -0.003em;
+            font-size: 16px;
+            color:
+                #5d5c5c;
+            word-spacing: 1px;
+            margin: 30px 0px;
+            .gatsby-resp-image-wrapper {
+                max-width: 100% !important;
+            }
+            code {
+                padding: .2em .5em;
+                font-size: 14px !important;
+                color: #212529;
+                background: #f7fafc;
+                border: 1px solid #e3e8ee;
+                font-weight: 500;
+            }
+        }
+    
+        ul li,
+        ol li {
+            margin-bottom: 8px;
+        }
+    
+        h3 {
+            font-size: 26px;
+            line-height: 1.22;
+            font-weight: 700 !important;
+            -webkit-letter-spacing: -0.012em;
+            -moz-letter-spacing: -0.012em;
+            -ms-letter-spacing: -0.012em;
+            letter-spacing: -0.012em;
+            margin-top: 30px;
+        }
+    
+        pre {
+            margin-bottom: 1.5rem;
+            margin-top: 30px;
+            font-size: 0.90rem;
+            line-height: 1.42;
+            background:
+                hsla(0, 0%, 0%, 0.04);
+            background-color: rgba(0, 0, 0, 0.04);
+            border-radius: 3px;
+            overflow: auto;
+            word-wrap: normal;
+        }
+        
+    }
+    
+    .written-by {
+        padding: 20px 0px;
+        border-top: 1px solid #eee;
+        letter-spacing: -0.003em;
+        font-size: 16px;
+        color:
+            #5d5c5c;
+        word-spacing: 1px;
+    
+        img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
         }
     }
+}
+
+.gatsby-highlight {
+    overflow-x: scroll;
+}
+
+.gatsby-highlight-code-line {
+    background-color: #feb;
+    display: block;
+    margin-right: -1em;
+    margin-left: -1em;
+    padding-right: 1em;
+    padding-left: 0.75em;
+    border-left: 0.25em solid #f99;
+}
+
+.gatsby-highlight pre[class*="language-"] {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    overflow: initial;
+    float: left;
+    /* 1 */
+    min-width: 100%;
+    /* 2 */
+}
+
+:not(pre)>code[class*="language-"],
+pre[class*="language-"] {
+    background: transparent;
+    border-radius: 0 !important;
+    color: #212529;
 }
