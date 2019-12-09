@@ -4,8 +4,9 @@ require('dotenv').config()
 module.exports = {
     siteMetadata: {
         title: `APIs Docs`,
-        description: `Now you can build API without code with NoCodeAPI`,
+        description: `Clean and minimal documentation about Public APIs`,
         author: `@mddanishyusuf`,
+        siteUrl: `https://apis-docs.com`,
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
@@ -131,6 +132,7 @@ module.exports = {
                 chunkSize: 10000, // default: 1000
             },
         },
+        `gatsby-plugin-sitemap`,
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.dev/offline
         // `gatsby-plugin-offline`,
