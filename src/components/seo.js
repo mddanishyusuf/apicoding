@@ -74,7 +74,12 @@ function SEO({ description, lang, meta, metadata, title, keywords }) {
                     content: metaImage,
                 },
             ].concat(meta)}
-        />
+        >
+            <script async defer src="https://sa.apis-docs.com/app.js" />
+            <noscript>{`
+            <img src="https://sa.apis-docs.com/image.gif" alt=""/>
+        `}</noscript>
+        </Helmet>
     )
 }
 
