@@ -45,7 +45,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     chunks.forEach((chunk, index) => {
         if (index === 0) {
             createPage({
-                path: `/`,
+                path: `/docs`,
                 component: apisTemplate,
                 context: {
                     first: POST_PER_PAGE / 2,
@@ -59,7 +59,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             })
         }
         createPage({
-            path: `/page/${index + 1}`,
+            path: `/docs/page/${index + 1}`,
             component: apisTemplate,
             context: {
                 first: POST_PER_PAGE / 2,

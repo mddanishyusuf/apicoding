@@ -10,15 +10,15 @@ const Header = ({ siteTitle }) => (
         <div className="header-navbar">
             <div className="nav-menu">
                 <Navbar.Brand>
-                    <Link to="/">APIs Docs</Link>
+                    <Link to="/">API Coding</Link>
                 </Navbar.Brand>
                 <Form inline>
                     <InputGroup>
-                        <InputGroup.Prepend>
+                        <InputGroup.Prepend className="search-icon">
                             <InputGroup.Text id="basic-addon1">
                                 <svg
-                                    width="15px"
-                                    height="15px"
+                                    width="20px"
+                                    height="20px"
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 18 18"
                                     aria-hidden="true"
@@ -43,7 +43,9 @@ const Header = ({ siteTitle }) => (
                             aria-describedby="basic-addon1"
                         />
                         <InputGroup.Prepend>
-                            <InputGroup.Text id="basic-addon1">Search</InputGroup.Text>
+                            <InputGroup.Text id="basic-addon1" className="search-btn">
+                                Search
+                            </InputGroup.Text>
                         </InputGroup.Prepend>
                     </InputGroup>
                 </Form>

@@ -1,7 +1,7 @@
 .apis-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 60px 20px;
+    padding: 60px 0px;
 }
 
 .api-card {
@@ -52,7 +52,7 @@
         p {
             color: #4e4e4e;
             line-height: 150%;
-            font-size: 14px;
+            font-size: 14px !important;
         }
 
         .read-more {
