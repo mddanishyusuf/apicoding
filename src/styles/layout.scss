@@ -21,3 +21,24 @@ pre {
     font-family: 'Poppins', sans-serif !important;
     font-size: 15px !important;
 }
+
+.view-all {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    a {
+        border: 1px solid #4e4e4e;
+        color: #4e4e4e;
+        font-size: 12px;
+        padding: 3px 15px;
+        background-color: #fff;
+        border-radius: 10px;
+    }
+}
+
+
+.top-border {
+    border-top: 1px solid #e0e0e0;
+    width: 100%;
+    margin-bottom: -15px;
+}

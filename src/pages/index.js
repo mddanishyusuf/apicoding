@@ -4,7 +4,9 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import LandingSection from '../components/landingSection'
 import DocSection from '../components/homepage/docSection'
-import LearnSection from '../components/homepage/learnSection'
+import BlogSection from '../components/homepage/blogSection'
+import CollectionSection from '../components/homepage/collection'
+import ViewMore from '../components/viewMore'
 
 import DocImg from '../images/documentation.png'
 import LearningImg from '../images/learning.png'
@@ -24,15 +26,19 @@ const IndexPage = () => (
                 Documentation
             </h4>
             <DocSection />
+            <ViewMore text="View More Documentation" link="/docs" />
             <h4>
                 <img src={LearningImg} width="40px" alt="documentation" />
                 Learning
             </h4>
-            <LearnSection />
+            <BlogSection />
+            <ViewMore text="View More Learning" link="/learning" />
             <h4>
                 <img src={CollectionImg} width="40px" alt="documentation" />
                 Collections
             </h4>
+            <CollectionSection />
+            <ViewMore text="View More Collections" link="/collections" />
             <h4>
                 <img src={ToolsImg} width="40px" alt="documentation" />
                 Tools

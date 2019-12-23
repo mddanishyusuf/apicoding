@@ -3,11 +3,11 @@ import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
 const DocCard = ({ node }) => (
-    <div className="api-card">
+    <div className="doc-card">
         <div
             className="card-head"
             style={{
-                background: `linear-gradient(90deg,${node.frontmatter.featuredImage.colors.lightVibrant},#a9a9a9)`,
+                background: node.frontmatter.featuredImage.colors.lightVibrant,
             }}
         >
             <Link to={node.frontmatter.path}>

@@ -1,17 +1,14 @@
 ---
 path: "/build-simple-api-with-nodejs"
 date: "2019-10-04"
-title: "Airtable"
-excert: 'Database, basically google spreadsheets meets Microsoft Access. With Airtable API we can access our tables rows.'
-https: true
-auth: 'apiKey'
-category: 'Database'
-pricing: ['free','pro']
+title: "Build Simple API with Nodejs and MongoDB"
+excert: 'Getting started with NodeJS framework and build simeple REST APIs. You can access data from database, update, delete.'
+keywords: ['nodejs','api', 'mongodb']
 officialDocsLink: 'https://airtable.com/api'
 author: "Mohd Danish"
 twitter: "https://twitter.com/mddanishyusuf"
 authorPic: "./authors/mddanishyusuf.png"
-featuredImage: "./images/airtable.png"
+featuredImage: "./images/1.jpg"
 ---
 
 If you building any application based on the google apis service then you need private key and client email to access their services.

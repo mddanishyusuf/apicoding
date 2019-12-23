@@ -66,6 +66,13 @@ module.exports = {
             },
         },
         {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `blog-posts`,
+                path: `${__dirname}/src/blog-posts`,
+            },
+        },
+        {
             resolve: `gatsby-transformer-remark`,
             options: {
                 plugins: [
@@ -121,6 +128,30 @@ module.exports = {
                         },
                     },
                 ],
+            },
+        },
+        {
+            resolve: 'gatsby-source-apiserver',
+            options: {
+                // Type prefix of entities from server
+                typePrefix: 'pa__',
+
+                // The url, this should be the endpoint you are attempting to pull data from
+                url: `https://public-apis-source.glitch.me/entries?page=1&per_page=10000&sort=desc`,
+
+                method: 'get',
+
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+
+                data: {},
+
+                name: 'apis',
+
+                entityLevel: `docs`,
+
+                verboseOutput: true,
             },
         },
         {

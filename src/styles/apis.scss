@@ -4,12 +4,11 @@
     padding: 60px 0px;
 }
 
-.api-card {
+.doc-card {
     margin-bottom: 15px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
-
+    box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
+    border-radius: 5px;
     .card-head {
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12);
 
         a {
             text-decoration: none;
@@ -53,6 +52,75 @@
             color: #4e4e4e;
             line-height: 150%;
             font-size: 14px !important;
+        }
+
+        .read-more {
+            font-size: 14px;
+            font-weight: 700;
+        }
+    }
+}
+
+.api-card {
+    margin-bottom: 15px;
+    box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
+    border-radius: 5px;
+    .card-head {
+
+        .head-content {
+            display: flex;
+            align-items: center;
+            padding: 10px 12px;
+
+            img {
+                border-radius: 50%;
+                background-color: #fff;
+            }
+
+            .card-title {
+                padding: 0px 15px;
+                margin-bottom: 0;
+
+                h2 {
+                    font-size: 17px;
+                    font-weight: 600;
+                    line-height: 17px;
+                    margin: 0;
+                }
+
+                span {
+                    font-size: 14px;
+                    color: #4e4e4e;
+                }
+
+                .api-meta {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    li {
+                        display: inline-block;
+                        font-size: 12px !important;
+                        padding-right: 10px;
+                        color: #4e4e4e;
+                        a {
+                            color: #4e4e4e;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    .card-content {
+        padding: 15px;
+
+        p {
+            color: #4e4e4e;
+            line-height: 150%;
+            font-size: 14px !important;
+            height: 50px;
+            overflow: hidden;
         }
 
         .read-more {
