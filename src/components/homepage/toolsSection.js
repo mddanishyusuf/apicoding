@@ -1,31 +1,33 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import APICard from '../apiCard'
+import ToolCard from '../toolCard'
 
-const CollectionSection = () => {
-    const { allPaApis } = useStaticQuery(
+const ToolsSection = () => {
+    const { allPaTools } = useStaticQuery(
         graphql`
             query {
-                allPaApis(limit: 9, filter: { title: { ne: null } }) {
+                allPaTools(limit: 9, filter: { title: { ne: null } }) {
                     nodes {
-                        id
-                        auth
-                        cat_id
-                        category
-                        color
-                        date(fromNow: true)
+                        added_date(fromNow: true)
+                        author
+                        date(fromNow: false)
                         description
-                        link
-                        slug
+                        id
+                        image
+                        logo
+                        pricing
+                        publisher
                         title
+                        type
+                        url
                     }
                 }
             }
         `
     )
 
-    const list = allPaApis.nodes
+    const list = allPaTools.nodes
 
     console.log(list)
 
@@ -36,7 +38,7 @@ const CollectionSection = () => {
                     {list.length > 0 &&
                         list.map((node, key) => (
                             <div className="col-md-4" key={key}>
-                                <APICard node={node} />
+                                <ToolCard node={node} />
                             </div>
                         ))}
                 </div>
@@ -45,4 +47,4 @@ const CollectionSection = () => {
     )
 }
 
-export default CollectionSection
+export default ToolsSection

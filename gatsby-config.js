@@ -137,7 +137,7 @@ module.exports = {
                 typePrefix: 'pa__',
 
                 // The url, this should be the endpoint you are attempting to pull data from
-                url: `https://public-apis-source.glitch.me/entries?page=1&per_page=10000&sort=desc`,
+                url: `https://apicoding.glitch.me/entries?page=1&per_page=10000&sort=desc`,
 
                 method: 'get',
 
@@ -152,6 +152,46 @@ module.exports = {
                 entityLevel: `docs`,
 
                 verboseOutput: true,
+            },
+        },
+        {
+            resolve: 'gatsby-source-apiserver',
+            options: {
+                // Type prefix of entities from server
+                typePrefix: 'pa__',
+
+                // The url, this should be the endpoint you are attempting to pull data from
+                url: `https://apicoding.glitch.me/get-tools`,
+
+                method: 'get',
+
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+
+                data: {},
+
+                name: 'tools',
+            },
+        },
+        {
+            resolve: 'gatsby-source-apiserver',
+            options: {
+                // Type prefix of entities from server
+                typePrefix: 'pa__',
+
+                // The url, this should be the endpoint you are attempting to pull data from
+                url: `https://apicoding.glitch.me/get-resources`,
+
+                method: 'get',
+
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+
+                data: {},
+
+                name: 'resources',
             },
         },
         {

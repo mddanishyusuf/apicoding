@@ -41,6 +41,7 @@
         "react-dom": "^16.11.0",
         "react-feather": "^2.0.3",
         "react-helmet": "^5.2.1",
+        "react-icons": "^3.8.0",
         "react-image": "^2.2.2",
         "react-syntax-highlighter": "^11.0.2",
         "reading-time": "^1.2.0"

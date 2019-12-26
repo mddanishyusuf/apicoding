@@ -1,9 +1,10 @@
 .blog-card-box {
     position: relative;
+    max-width: 1200px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(500px, 1fr) ) ;
     grid-gap: 40px;
-    margin: 80px 0px;
+    margin: 80px auto;
     .card-image {
         width: 100%;
         img {

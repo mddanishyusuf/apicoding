@@ -1,13 +1,14 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import DocCard from '../docCard'
+import BlogCard from '../blogCard'
+import '../../styles/blog-card.scss'
 
-const LearnSection = () => {
+const LearningSection = () => {
     const { allMarkdownRemark } = useStaticQuery(
         graphql`
             query {
-                allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/(docs-pages)/.*\\\\.md$/" } }, limit: 6) {
+                allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/(blog-posts)/.*\\\\.md$/" } }, limit: 4) {
                     nodes {
                         html
                         frontmatter {
@@ -15,13 +16,13 @@ const LearnSection = () => {
                             path
                             title
                             excert
-                            category
+                            keywords
                             featuredImage {
                                 colors {
                                     lightVibrant
                                 }
                                 childImageSharp {
-                                    fluid(maxWidth: 500) {
+                                    fluid(maxWidth: 800) {
                                         ...GatsbyImageSharpFluid
                                     }
                                 }
@@ -36,13 +37,17 @@ const LearnSection = () => {
     const list = allMarkdownRemark.nodes
 
     return (
-        <div className="apis-container">
-            <div className="apis-items">
-                <div className="row">
+        <div className="blog-container">
+            <div className="blog-items">
+                <div className="blog-card-box">
                     {list.length > 0 &&
                         list.map((node, key) => (
-                            <div className="col-md-4" key={key}>
-                                <DocCard node={node} />
+                            <div
+                                className={`card-box card-style-${key + 1}`}
+                                style={{ backgroundColor: node.frontmatter.featuredImage.colors.lightVibrant }}
+                                key={key}
+                            >
+                                <BlogCard node={node} />
                             </div>
                         ))}
                 </div>
@@ -51,4 +56,4 @@ const LearnSection = () => {
     )
 }
 
-export default LearnSection
+export default LearningSection

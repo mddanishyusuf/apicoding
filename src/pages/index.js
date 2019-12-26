@@ -4,8 +4,10 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import LandingSection from '../components/landingSection'
 import DocSection from '../components/homepage/docSection'
-import BlogSection from '../components/homepage/blogSection'
+import LearningSection from '../components/homepage/learnSection'
 import CollectionSection from '../components/homepage/collection'
+import ToolsSection from '../components/homepage/toolsSection'
+import ResourcesSection from '../components/homepage/resourcesSection'
 import ViewMore from '../components/viewMore'
 
 import DocImg from '../images/documentation.png'
@@ -31,22 +33,27 @@ const IndexPage = () => (
                 <img src={LearningImg} width="40px" alt="documentation" />
                 Learning
             </h4>
-            <BlogSection />
-            <ViewMore text="View More Learning" link="/learning" />
+            <LearningSection />
+            <ViewMore text="View More Learning" link="/learn" />
             <h4>
-                <img src={CollectionImg} width="40px" alt="documentation" />
+                <img src={CollectionImg} width="40px" alt="Learning" />
                 Collections
             </h4>
             <CollectionSection />
-            <ViewMore text="View More Collections" link="/collections" />
+            <ViewMore text="View More Collections" link="/public-apis" />
             <h4>
-                <img src={ToolsImg} width="40px" alt="documentation" />
+                <img src={ToolsImg} width="40px" alt="Public APIs" />
                 Tools
             </h4>
+            <ToolsSection />
+            <ViewMore text="View More Tools" link="/tools" />
             <h4>
-                <img src={ResourcesImg} width="40px" alt="documentation" />
+                <img src={ResourcesImg} width="40px" alt="resources" />
                 Resources
             </h4>
+
+            <ResourcesSection />
+            <ViewMore text="View More Resources" link="/resources" />
         </div>
     </Layout>
 )
