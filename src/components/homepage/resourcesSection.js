@@ -9,17 +9,24 @@ const ResourcesSection = () => {
             query {
                 allPaResources(limit: 8, filter: { title: { ne: null } }) {
                     nodes {
-                        id
+                        featuredImg {
+                            childImageSharp {
+                                fluid(maxWidth: 500) {
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
                         _id
                         author
-                        date(fromNow: false)
-                        image
+                        date
                         description
+                        id
+                        image
                         logo
-                        published_at(fromNow: true)
                         publisher
-                        title
+                        published_at(fromNow: true)
                         url
+                        title
                     }
                 }
             }
@@ -27,6 +34,8 @@ const ResourcesSection = () => {
     )
 
     const list = allPaResources.nodes
+
+    console.log(list)
 
     return (
         <div className="apis-container">

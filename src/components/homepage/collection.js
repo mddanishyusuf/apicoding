@@ -27,8 +27,6 @@ const CollectionSection = () => {
 
     const list = allPaApis.nodes
 
-    console.log(list)
-
     return (
         <div className="apis-container">
             <div className="apis-items">

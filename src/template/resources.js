@@ -8,6 +8,8 @@ import ResourceCard from '../components/resourceCard'
 const ResourcesSection = ({ data }) => {
     const list = data.allPaResources.nodes
 
+    console.log(list)
+
     return (
         <Layout>
             <SEO
@@ -36,6 +38,13 @@ export const pageQuery = graphql`
     query($skip: Int, $limit: Int) {
         allPaResources(filter: { title: { ne: null } }, skip: $skip, limit: $limit) {
             nodes {
+                featuredImg {
+                    childImageSharp {
+                        fluid(maxWidth: 500) {
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                }
                 id
                 _id
                 author
