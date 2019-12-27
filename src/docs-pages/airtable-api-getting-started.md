@@ -1,8 +1,9 @@
 ---
 path: "/airtable-api-getting-started"
-date: "2019-10-04"
+date: "2019-10-01"
+updateAt: "2019-11-20"
 title: "Airtable"
-excert: 'Database, basically google spreadsheets meets Microsoft Access. With Airtable API we can access our tables rows.'
+excert: 'Airtable is an web based tool to make spreedsheet, database, forms, kanban, calendar on the top of the airtable base.'
 https: true
 auth: 'apiKey'
 category: 'Database'
@@ -14,35 +15,222 @@ authorPic: "./authors/mddanishyusuf.png"
 featuredImage: "./images/airtable.png"
 ---
 
-If you building any application based on the google apis service then you need private key and client email to access their services.
+Airtable is an web based tool to make spreedsheet, database, forms, kanban, calendar on the top of the airtable base. So, basically this is similar Google Spreedsheet but airtable have more flexiblity and features.
 
-To build Google Analytics API you need three values `Client Email`, `Private Key` & `View ID`
+So, you can integrate airtable data into your applications like build website with their public APIs.
 
-- Go here [Google Analytics Reporting API](https://console.cloud.google.com/projectselector2/apis/api/analyticsreporting.googleapis.com/overview)
-- Select the project or make new project
-- Click on `Enable` to access Analytics API Services
-- Click on `Credentials` and `Create Credentials` with `Service Account`.
-- Follow the step those are required and `Create Key` with JSON type and `Done`
-- Save the credentials json file.
-- Important step -> Add `client_email` from JSON file into your Google Analytics Account go to `Admin`-> `User Management` and add the email address.
-- Get View ID ->  Google Analytics Account go to `Admin`-> `View` Tab -> `View Settings` -> Get View ID.
+## Specifications:
 
-Here is the example:
+- Rate limit - `5 requests/second/base`
+- Authentication - `API key`
+- API client - `JavaScript` - official, `Ruby` - community, `.NET` - community
 
-```json
-{
-  "type": "service_account",
-  "project_id": "nocodeapi-257512",
-  "private_key_id": "980c5bd6d331fd2bf3252d0bd0a2ae6033b854ca",
-  "private_key": "<A long private key>", // highlight-line
-  "client_email": "nocodeapi-857@nocodeapi-257512.iam.gserviceaccount.com", // highlight-line 
-  "client_id": "100000573787960595567",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/nocodeapi-857%40nocodeapi-257512.iam.gserviceaccount.com"
+## Prerequisites
+
+- <b>Base ID</b> - Go here https://airtable.com/api and select your airtable base then you can find the base ID in URL & It begins with `app`. Ex: https://airtable.com/appofMoPxdu7iQ7hf/api/docs
+- <b>Table Name</b> - Name of the table in your Airtable Base
+- <b>API Key</b> - You can get your Airtable API key here https://airtable.com/account
+
+There are following method to use airtable API.
+
+- [JavaScript](#javascript)
+- Node.js
+- PHP
+- Ruby
+- Python
+
+### JavaScript
+This is simple and easiest way to use as simple API endpoint with some query params if there is any. So, we will use `fetch` to make http call. 
+
+### Get all records
+
+```javascript
+async function getRecords(){
+    const response = await fetch('https://api.airtable.com/v0/<base_id>/<table_name>?api_key=<api_key>');
+    const myJson = await response.json();
+    console.log(JSON.stringify(myJson));
 }
+getRecords()
 ```
 
-### Here is Video Version
-`video: https://www.youtube.com/embed/2Xc9gXyf2G4`
+### Get a records
+
+```javascript
+async function getRecord(){
+    const response = await fetch('https://api.airtable.com/v0/<base_id>/<table_name>/<record_id>?api_key=<api_key>');
+    const myJson = await response.json();
+    console.log(JSON.stringify(myJson));
+}
+getRecord()
+```
+
+### Create Records
+
+```javascript
+const url = "https://api.airtable.com/v0/<base_id>/<table_name>?api_key=<api_key>";
+const data = {
+    records: [
+      // highlight-start
+        { 
+            fields: {
+                name: "test",
+                email: "test@gmail.com"
+            }
+        } 
+      // highlight-end
+    ]
+};
+
+async function createRecords() {
+    try {
+        const response = await fetch(url, {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+        const json = await response.json();
+        console.log("Success:", JSON.stringify(json));
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
+
+createRecords();
+```
+
+## Node.js
+Airtable have official client library for Nodejs.
+
+```shell
+npm i --save airtable
+or
+yarn add airtable
+```
+
+### Get all records
+
+```javascript
+const Airtable = require('airtable');
+
+const base = new Airtable({ apiKey: <api_key> }).base(<base_id>);
+
+const options = {
+    view: "Grid view",
+    pageSize: pageSize
+};
+
+const limit = "<limit>";
+const page = 1;
+const processPage = (partialRecords, fetchNextPage) => {
+    records = [...records, ...partialRecords];
+    fetchNextPage();
+};
+const processRecords = err => {
+    if (err) {
+        res.status(404).send(err);
+        return;
+    }
+    const count = records.length;
+    const offset = page * limit - limit;
+
+    const models = records
+        .map(record => record._rawJson)
+        .slice(offset, limit * page);
+    res.json(models);
+};
+
+base(app.apis_info.table_name)
+    .select(options)
+    .eachPage(processPage, processRecords);
+
+
+```
+
+### Get a records
+
+```javascript
+const axios = require("axios");
+
+axios
+    .get("https://api.airtable.com/v0/<base_id>/<table_name>/<record_id>?api_key=<api_key>")
+    .then(function(response) {
+        console.log(response.data);
+    })
+    .catch(function(error) {
+        console.log(error);
+    });
+```
+
+### Create Records
+
+```javascript
+const data = {
+    records: [
+        {
+            fields: {
+                name: "test",
+                email: "test@gmail.com"
+            }
+        }
+    ]
+};
+
+axios({
+    method: 'post',
+    url: 'https://api.airtable.com/v0/<base_id>/<table_name>?api_key=<api_key>',
+    data: data
+});
+```
+
+## Python
+Install `requests` library for python to make http calls.
+
+```shell
+sudo pip install requets
+```
+
+### Get all records
+
+```python
+import requests
+url = "https://api.airtable.com/v0/<base_id>/<table_name>"
+params = { "api_key": "<api_key>" }
+r = requests.get(url = URL, params = PARAMS)
+data = r.json()
+print data
+```
+
+### Get a record
+
+```python
+import requests
+url = "https://api.airtable.com/v0/<base_id>/<table_name>/<record_id>"
+params = { "api_key": "<api_key>" }
+r = requests.get(url = URL, params = PARAMS)
+data = r.json()
+print data
+```
+
+### Create Records
+
+```python
+import requests
+url = "https://api.airtable.com/v0/<base_id>/<table_name>"
+params = { "api_key": "<api_key>" }
+headers = {'Content-Type': 'application/json', 'Accept':'application/json'}
+data = {
+    "records": [
+        {
+            "fields": {
+                "name": "test",
+                "email": "test@gmail.com"
+            }
+        }
+    ]
+}
+r = requests.post(url = url, json = data, params = params, headers=headers)
+data = r.json()
+print data
+```

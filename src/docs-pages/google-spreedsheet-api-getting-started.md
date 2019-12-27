@@ -18,7 +18,7 @@ If you building any application based on the google apis service then you need p
 
 To build Google Analytics API you need three values `Client Email`, `Private Key` & `View ID`
 
-- Go here [Google Analytics Reporting API](https://console.cloud.google.com/projectselector2/apis/api/analyticsreporting.googleapis.com/overview)
+- Go here <a href="https://console.cloud.google.com/projectselector2/apis/api/analyticsreporting.googleapis.com/overview" target="_blank" rel="noopener noreferrer">Google Analytics Reporting API</a>
 - Select the project or make new project
 - Click on `Enable` to access Analytics API Services
 - Click on `Credentials` and `Create Credentials` with `Service Account`.
@@ -44,5 +44,5 @@ Here is the example:
 }
 ```
 
-### Here is Video Version
+## Here is Video Version
 `video: https://www.youtube.com/embed/2Xc9gXyf2G4`

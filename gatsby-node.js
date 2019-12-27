@@ -12,6 +12,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const collectionTemplate = path.resolve(`src/template/collection.js`)
     const toolTemplate = path.resolve(`src/template/tools.js`)
     const resourcesTemplate = path.resolve(`src/template/resources.js`)
+    const blogPostTemplate = path.resolve(`src/template/blog.js`)
 
     const result = await graphql(`
         {
@@ -103,6 +104,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
     const learningChunks = _.chunk(learning.data.allMarkdownRemark.edges, POST_PER_PAGE)
     const LEARN_TOTAL_OBJECT = learning.data.allMarkdownRemark.edges.length
+
+    learning.data.allMarkdownRemark.edges.forEach(({ node }) => {
+        createPage({
+            path: node.frontmatter.path,
+            component: blogPostTemplate,
+            context: {}, // additional data can be passed via context
+        })
+    })
 
     learningChunks.forEach((chunk, index) => {
         if (index === 0) {

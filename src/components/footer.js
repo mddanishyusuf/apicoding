@@ -19,7 +19,11 @@ const Footer = () => {
                         <div className="social-links">
                             <ul>
                                 <li>
-                                    <a href="https://twitter.com/mddanishyusuf">
+                                    <a
+                                        href="https://twitter.com/mddanishyusuf"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         <Twitter size={12} /> <span>Follow on Twitter</span>
                                     </a>
                                 </li>

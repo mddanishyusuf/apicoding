@@ -31,7 +31,12 @@ export default function Template({
                         />
                         <h2>{frontmatter.title}</h2>
                         <div className="excert">{frontmatter.excert}</div>
-                        <a className="view-original" href={frontmatter.officialDocsLink}>
+                        <a
+                            className="view-original"
+                            href={frontmatter.officialDocsLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             Original Docs <ExternalLink size={15} />
                         </a>
                         <hr />

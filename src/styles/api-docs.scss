@@ -57,52 +57,58 @@
         p,
         ul,
         ol {
-            letter-spacing: -0.003em;
-            font-size: 16px;
-            color:
-                #5d5c5c;
-            word-spacing: 1px;
-            margin: 30px 0px;
+            line-height: 1.7;
+            margin: 0 0 22px;
+            font-size: 15px !important;
+            code {
+                font-size: 13px !important;
+                background-color: rgba(0,0,0,.05);
+                border-radius: 3px;
+                padding: 3px;
+                color: #000;
+            }
             .gatsby-resp-image-wrapper {
                 max-width: 100% !important;
             }
-            code {
-                padding: .2em .5em;
-                font-size: 14px !important;
-                color: #212529;
-                background: #f7fafc;
-                border: 1px solid #e3e8ee;
-                font-weight: 500;
+        }
+    
+        ul, ol {
+            margin-bottom: 1.7rem;
+            padding-left: 2.5rem;
+            li {
+                margin-bottom: .8rem;
+                padding-left: 4px;
+                font-size: 15px !important;
+                code {
+                    font-size: 13px !important;
+                    background-color: rgba(0,0,0,.05);
+                    border-radius: 3px;
+                    padding: 3px;
+                    color: #000;
+                }
             }
         }
-    
-        ul li,
-        ol li {
-            margin-bottom: 8px;
+
+        h2 {
+            color: #323232;
+            font-size: 22px;
+            margin: 30px auto 10px;
         }
-    
+
         h3 {
-            font-size: 26px;
-            line-height: 1.22;
-            font-weight: 700 !important;
-            -webkit-letter-spacing: -0.012em;
-            -moz-letter-spacing: -0.012em;
-            -ms-letter-spacing: -0.012em;
-            letter-spacing: -0.012em;
-            margin-top: 30px;
+            color: #323232;
+            font-size: 16px;
+            margin: 30px auto 10px;
         }
     
         pre {
-            margin-bottom: 1.5rem;
-            margin-top: 30px;
-            font-size: 0.90rem;
-            line-height: 1.42;
-            background:
-                hsla(0, 0%, 0%, 0.04);
-            background-color: rgba(0, 0, 0, 0.04);
-            border-radius: 3px;
-            overflow: auto;
-            word-wrap: normal;
+            line-height: 1.7;
+            margin: 0 0 22px;
+            font-size: 15px !important;
+            code {
+                font-size: 13px !important;
+                border-radius: 3px;
+            }
         }
         
     }
@@ -154,4 +160,65 @@ pre[class*="language-"] {
     background: transparent;
     border-radius: 0 !important;
     color: #212529;
+}
+
+.gatsby-highlight pre[class="language-javascript"]::before {
+    content: "javascript";
+    margin-top: -28px;
+}
+
+.gatsby-highlight pre[class="language-shell"]::before {
+    content: "shell";
+}
+
+
+.gatsby-highlight pre[class="language-python"]::before {
+    content: "python";
+}
+
+.gatsby-highlight pre[class*="language-"]::before {
+    color: #fff;
+    margin-top: -28px;
+    background: #333;
+    font-size: 0.75rem;
+    letter-spacing: 0.075em;
+    line-height: 1;
+    position: absolute;
+    left: 1.5rem;
+    text-align: right;
+    text-transform: uppercase;
+    border-radius: 0px 0px 4px 4px;
+    padding: 0.25rem 0.5rem;
+}
+
+.code-tabs {
+	position: relative;
+    clear: both;
+
+    line-height: 1.7;
+    margin: 0 0 22px;
+    font-size: 15px !important;
+    .tab {
+        float: left;
+        .content{
+            position: absolute;
+            background-color: white;
+            left: 0px;
+            width: 100%;
+        }
+        .checkboxtab{
+            display: none;
+            &:checked ~ label {
+                color: #ab70ff;
+	            border: 1px #000 solid;
+            }
+            &:checked ~ content{
+                z-index: 1;
+            }
+        }
+        label {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    }
 }

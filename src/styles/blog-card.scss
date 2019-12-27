@@ -17,29 +17,33 @@
         border-radius: 5px;
         box-shadow: 8px 14px 38px rgba(39,44,49,.06), 1px 3px 8px rgba(39,44,49,.03);
         cursor: pointer;
-        .blog-card {
-            display: grid;
-            grid-template-columns: 40% 60%;
-        }
-
-        .card-content {
-            padding: 20px;
-            h2 {
-                font-size: 22px;
-                font-weight: 600;
+        a {
+            text-decoration: none;
+            .blog-card {
+                display: grid;
+                grid-template-columns: 40% 60%;
             }
-
-            .keywords {
-                span {
-                    font-size: 14px;
-                    color: #4e4e4e;
-                    padding-right: 5px;
+    
+            .card-content {
+                padding: 20px;
+                h2 {
+                    font-size: 22px;
+                    font-weight: 600;
+                    color: #2f2d2d;
                 }
-            }
-
-            .reading-time {
-                font-size: 12px;
-                color: #4e4e4e;
+    
+                .keywords {
+                    span {
+                        font-size: 13px;
+                        color: #4e4e4e;
+                        padding-right: 5px;
+                    }
+                }
+    
+                .reading-time {
+                    font-size: 11px;
+                    color: #4e4e4e;
+                }
             }
         }
     }
