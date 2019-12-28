@@ -16,7 +16,7 @@ export default function Template({
     const stats = readingTime(html)
     return (
         <Layout>
-            <SEO title={`${frontmatter.title} Simple And Easy Docs`} metadata={frontmatter} />
+            <SEO title={`${frontmatter.title}`} metadata={frontmatter} />
             <div className="blog-post-container">
                 <div className="blog-section">
                     <div className="blog-meta">

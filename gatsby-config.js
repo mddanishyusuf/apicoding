@@ -3,10 +3,12 @@ require('dotenv').config()
 
 module.exports = {
     siteMetadata: {
-        title: `APIs Docs`,
+        title: `API Coding`,
         description: `Clean and minimal documentation about Public APIs`,
         author: `@mddanishyusuf`,
         siteUrl: `https://apis-docs.com`,
+        image: `/images/api-coding.png`,
+        twitterUsername: '@mddanishyusuf',
     },
     plugins: [
         `gatsby-plugin-react-helmet`,
@@ -203,6 +205,13 @@ module.exports = {
             },
         },
         `gatsby-plugin-sitemap`,
+        {
+            resolve: 'gatsby-plugin-mailchimp',
+            options: {
+                endpoint:
+                    'https://iamnewbie.us10.list-manage.com/subscribe/post?u=d6aa14d1db1acb93b8125a0e1&amp;id=a494ca665f', // add your MC list endpoint here; see instructions below
+            },
+        },
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.dev/offline
         // `gatsby-plugin-offline`,

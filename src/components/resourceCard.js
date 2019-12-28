@@ -1,9 +1,10 @@
 import React from 'react'
 import Img from 'gatsby-image'
 import { Link } from 'gatsby'
-import { Calendar, Lock, Key, Tag } from 'react-feather'
+import { Calendar, Lock, Key, Tag, ExternalLink } from 'react-feather'
 
 import { getHostname } from '../utils/functions'
+import '../styles/resource-card.scss'
 
 const ResourceCard = ({ node }) => (
     <div className="resources-card">
@@ -26,6 +27,14 @@ const ResourceCard = ({ node }) => (
         <div className="content">
             <h2>{node.title}</h2>
             <p>{node.description}</p>
+        </div>
+        <div className="card-actions">
+            <div className="copy">Read Later</div>
+            <div className="view">
+                <a href={node.url} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink size={12} /> View Now
+                </a>
+            </div>
         </div>
     </div>
 )

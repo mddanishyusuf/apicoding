@@ -3,8 +3,9 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import BlogCard from '../components/blogCard'
-import '../styles/blog-card.scss'
+import LearnCard from '../components/learnCard'
+import LearningImg from '../images/learning.png'
+import '../styles/learn-card.scss'
 
 const LearningSection = ({ data }) => {
     const list = data.allMarkdownRemark.nodes
@@ -12,10 +13,28 @@ const LearningSection = ({ data }) => {
     return (
         <Layout>
             <SEO
-                title="Public APIs Docs in Simple Way"
-                description="APIs docs is an website for public and free APIs simple documentation. How to use Public APIs and INtegrate into React, Angular, JAMstack Applications in easy and simple way"
+                title="Articles about API developments and hacks"
+                description="Learn about APIs development. How to build Nodejs API, How to build Python API, API hosting, Free website for Nodejs hosting, list of APIs tools."
+                keywords={[
+                    'learning',
+                    'free',
+                    'tutorials',
+                    'api',
+                    'nodejs',
+                    'python',
+                    'mongodb',
+                    'hosting',
+                    'tools',
+                    'build',
+                ]}
             />
             <div className="blog-container">
+                <br />
+                <h4>
+                    <img src={LearningImg} width="40px" alt="documentation" />
+                    Learning
+                </h4>
+                <p>I make log about my APIs leanring as blog post</p>
                 <div className="blog-items">
                     <div className="blog-card-box">
                         {list.length > 0 &&
@@ -25,7 +44,7 @@ const LearningSection = ({ data }) => {
                                     style={{ backgroundColor: node.frontmatter.featuredImage.colors.lightVibrant }}
                                     key={key}
                                 >
-                                    <BlogCard node={node} />
+                                    <LearnCard node={node} />
                                 </div>
                             ))}
                     </div>

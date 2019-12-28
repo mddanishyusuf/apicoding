@@ -3,8 +3,9 @@ import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
 import readingTime from 'reading-time'
+import '../styles/learn-card.scss'
 
-const BlogCard = ({ node }) => {
+const LearnCard = ({ node }) => {
     const card = node.frontmatter
     const stats = readingTime(node.html)
     return (
@@ -25,4 +26,4 @@ const BlogCard = ({ node }) => {
     )
 }
 
-export default BlogCard
+export default LearnCard

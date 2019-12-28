@@ -6,7 +6,7 @@ import SEO from '../components/seo'
 import APICard from '../components/apiCard'
 import CollectionImg from '../images/collection.png'
 
-const CollectionSection = ({ data }) => {
+const CollectionCatSection = ({ data }) => {
     const list = data.allPaApis.nodes
 
     return (
@@ -50,11 +50,11 @@ const CollectionSection = ({ data }) => {
     )
 }
 
-export default CollectionSection
+export default CollectionCatSection
 
 export const pageQuery = graphql`
-    query($skip: Int, $limit: Int) {
-        allPaApis(filter: { title: { ne: null } }, skip: $skip, limit: $limit) {
+    query($skip: Int, $limit: Int, $cat_id: String) {
+        allPaApis(skip: $skip, limit: $limit, filter: { cat_id: { eq: $cat_id } }) {
             nodes {
                 id
                 auth

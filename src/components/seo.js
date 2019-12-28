@@ -12,6 +12,8 @@ function SEO({ description, lang, meta, metadata, title, keywords }) {
                         title
                         description
                         author
+                        image
+                        twitterUsername
                     }
                 }
             }
@@ -19,7 +21,7 @@ function SEO({ description, lang, meta, metadata, title, keywords }) {
     )
 
     const metaDescription = description || metadata.excert
-    const metaImage = metadata.featuredImage === undefined ? '' : metadata.featuredImage.publicURL
+    const metaImage = metadata.featuredImage === undefined ? site.siteMetadata.image : metadata.featuredImage.publicURL
 
     return (
         <Helmet

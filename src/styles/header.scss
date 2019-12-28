@@ -33,6 +33,10 @@ header {
     display: grid;
     grid-template-columns: 150px auto 200px;
     padding: 10px 0px;
+}
+
+.search-box, .mobile-search{
+
 
     .search-icon {
         border: 0 !important;
@@ -78,3 +82,21 @@ header {
     }
 }
 
+.nav-menu {
+    @media screen and (max-width: 720px) {
+        grid-template-columns: auto 200px;
+        padding: 10px;
+    }
+}
+
+.mobile-search {
+    @media screen and (min-width: 720px) {
+        display: none
+    }
+}
+
+.search-box {
+    @media screen and (max-width: 720px) {
+        display: none
+    }
+}

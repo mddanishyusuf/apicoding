@@ -1,16 +1,17 @@
 import React from 'react'
 import Img from 'react-image'
 import { Link } from 'gatsby'
-import { Calendar, Lock, Key, Tag } from 'react-feather'
+import { ExternalLink, Lock, Key, Tag } from 'react-feather'
 
 import { getHostname } from '../utils/functions'
+import '../styles/api-card.scss'
 
 const APICard = ({ node }) => (
     <div className="api-card">
         <div
             className="card-head"
             style={{
-                background: '#f5f8fa',
+                background: node.color,
             }}
         >
             <div className="head-content">
@@ -24,7 +25,9 @@ const APICard = ({ node }) => (
                     ]}
                 />
                 <div className="card-title">
-                    <h2>{node.title}</h2>
+                    <a href={node.link} target="_blank" rel="noopener noreferrer">
+                        <h2>{node.title}</h2>{' '}
+                    </a>
                     <ul className="api-meta">
                         {/* <li>
                             <Calendar size={12} /> {node.date}
@@ -33,11 +36,14 @@ const APICard = ({ node }) => (
                             <Key size={12} /> {node.auth}
                         </li>
                         <li>
-                            <Link href="/">
+                            <Link to={`/public-apis/category/${node.cat_id}-apis`}>
                                 <Tag size={12} /> {node.category}
                             </Link>
                         </li>
                     </ul>
+                </div>
+                <div className="external-link">
+                    <ExternalLink size={13} />
                 </div>
             </div>
         </div>

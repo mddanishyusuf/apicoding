@@ -1,12 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
-import { FormControl, InputGroup } from 'react-bootstrap'
-import { Edit, Mail, Twitter } from 'react-feather'
+import addToMailchimp from 'gatsby-plugin-mailchimp'
+import { AlertCircle, CheckCircle, Twitter, Mail } from 'react-feather'
 
 import '../styles/footer.scss'
 
 const Footer = () => {
-    console.log('footer')
+    const [email, setEmail] = useState('')
+    const [newsletterWarningMsg, setNewsletterWarningMsg] = useState('')
+    const [newsletterSuccessMsg, setNewsletterSuccessMsg] = useState('')
+
+    const emailHandle = e => {
+        e.preventDefault()
+        setEmail(e.target.value)
+    }
+
+    const _handleSubmit = async e => {
+        e.preventDefault()
+        if (email === null || email.length === 0) {
+            setNewsletterWarningMsg('please input your email')
+        } else {
+            setNewsletterWarningMsg('')
+            const res = await addToMailchimp(email)
+            if (res.result === 'error') {
+                setNewsletterSuccessMsg(`${email} is already subscribed to list API Coding Weekly Newsletter.`)
+            } else {
+                setEmail('')
+                setNewsletterSuccessMsg('Successfully Subscribed. Thanks!')
+            }
+
+            setTimeout(() => {
+                setNewsletterSuccessMsg('')
+                setEmail('')
+            }, 4000)
+        }
+    }
 
     return (
         <footer>
@@ -14,8 +42,15 @@ const Footer = () => {
                 <div className="footer-nav row">
                     <div className="col-md-6">
                         <Link to="/" className="footer-logo">
-                            API Coding
+                            Hey, I'm Mohd Danish
                         </Link>
+                        <p>
+                            & Front-end Developer. I'm the curator and writer of this website. So, this is all my
+                            development experience about APIs.{' '}
+                            <a href="https://mohddanish.me/projects" target="_blank" rel="noopener noreferrer">
+                                View all my projects.
+                            </a>
+                        </p>
                         <div className="social-links">
                             <ul>
                                 <li>
@@ -29,60 +64,31 @@ const Footer = () => {
                                 </li>
                                 <li>
                                     <a href="mailto:mddanishyusuf@gmail.com">
-                                        <Mail size={12} /> <span>Email Us</span>
+                                        <Mail size={12} /> <span>Email Me</span>
                                     </a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div className="col-md-3">
-                        <ul>
-                            <li>
-                                <b>Other Products</b>
-                            </li>
-                            <li>
-                                <a href="https://nocodeapi.com" target="_blank" rel="noopener noreferrer">
-                                    nocodeapi.com
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://public-apis.xyz" target="_blank" rel="noopener noreferrer">
-                                    public-apis.xyz
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://tweetjobs.dev" target="_blank" rel="noopener noreferrer">
-                                    tweetjobs.dev
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://dailyhack.xyz" target="_blank" rel="noopener noreferrer">
-                                    dailyhack.xyz
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://apiwithgithub.com/" target="_blank" rel="noopener noreferrer">
-                                    apiwithgithub.com
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div className="col-md-3">
-                        <ul>
-                            <li>
-                                <b>Menu</b>
-                            </li>
-                            <li>
-                                <a href="https://airtable.com" target="_blank" rel="noopener noreferrer">
-                                    Feedback
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://airtable.com" target="_blank" rel="noopener noreferrer">
-                                    Need Help?
-                                </a>
-                            </li>
-                        </ul>
+                    <div className="col-md-2" />
+                    <div className="col-md-4 newsletter">
+                        <h3>Need weekly email for fresh contents?</h3>
+                        <form onSubmit={_handleSubmit}>
+                            <input
+                                type="email"
+                                name="email"
+                                value={email}
+                                onChange={emailHandle}
+                                placeholder="Yes, I'm sharing."
+                            />
+                            <button type="submit">Send Now</button>
+                        </form>
+                        <div className="warning-msg">
+                            {newsletterWarningMsg !== '' && <AlertCircle size={13} />} {newsletterWarningMsg}
+                        </div>
+                        <div className="warning-success">
+                            {newsletterSuccessMsg !== '' && <CheckCircle size={13} />} {newsletterSuccessMsg}
+                        </div>
                     </div>
                 </div>
                 <div className="row bottom-links">

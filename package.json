@@ -14,6 +14,7 @@
         "gatsby-image": "^2.2.30",
         "gatsby-plugin-algolia": "^0.5.0",
         "gatsby-plugin-extract-image-colors": "^0.0.14",
+        "gatsby-plugin-mailchimp": "^5.1.2",
         "gatsby-plugin-manifest": "^2.2.26",
         "gatsby-plugin-mdx": "^1.0.55",
         "gatsby-plugin-offline": "^3.0.17",

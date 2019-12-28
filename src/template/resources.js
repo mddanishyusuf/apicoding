@@ -4,19 +4,35 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import ResourceCard from '../components/resourceCard'
+import ResourcesImg from '../images/resources.png'
 
 const ResourcesSection = ({ data }) => {
     const list = data.allPaResources.nodes
 
-    console.log(list)
-
     return (
         <Layout>
             <SEO
-                title="Public APIs Docs in Simple Way"
-                description="APIs docs is an website for public and free APIs simple documentation. How to use Public APIs and INtegrate into React, Angular, JAMstack Applications in easy and simple way"
+                title="Tutorials and Articles about APIs curated from Internet"
+                description="Handcurated collections of articles, videos, tutorials and Knowledge base for apis developments and testing."
+                keywords={[
+                    'collections',
+                    'tutorials',
+                    'videos',
+                    'apis',
+                    'nodejs',
+                    'free',
+                    'knowledge',
+                    'developments',
+                    'testing',
+                ]}
             />
             <div className="apis-container">
+                <h4>
+                    <img src={ResourcesImg} width="40px" alt="resources" />
+                    Resources
+                </h4>
+                <p>I love to collect good articles those I found on the internet</p>
+                <br />
                 <div className="apis-items">
                     <div className="row">
                         {list.length > 0 &&

@@ -27,7 +27,7 @@ So, you can integrate airtable data into your applications like build website wi
 
 ## Prerequisites
 
-- <b>Base ID</b> - Go here https://airtable.com/api and select your airtable base then you can find the base ID in URL & It begins with `app`. Ex: https://airtable.com/appofMoPxdu7iQ7hf/api/docs
+- <b>Base ID</b> - Go here https://airtable.com/api and select your airtable base then you can find the base ID in URL & It begins with `app`. Ex: <a href="https://airtable.com/appRFfnDh8USooWYE/api/docs" target="_blank" rel="noopener">https://airtable.com/appRFfnDh8USooWYE/api/docs</a>
 - <b>Table Name</b> - Name of the table in your Airtable Base
 - <b>API Key</b> - You can get your Airtable API key here https://airtable.com/account
 
@@ -46,7 +46,45 @@ This is simple and easiest way to use as simple API endpoint with some query par
 
 ```javascript
 async function getRecords(){
-    const response = await fetch('https://api.airtable.com/v0/<base_id>/<table_name>?api_key=<api_key>');
+    const pageSize = 10 // if you want to apply pagination
+    const response = await fetch('https://api.airtable.com/v0/<base_id>/<table_name>?api_key=<api_key>&pageSize=' + pageSize);
+    const myJson = await response.json();
+    console.log(JSON.stringify(myJson));
+}
+getRecords()
+```
+
+```json
+Result:
+{
+  "records": [
+    {
+      "id": "rec6HO0IguaNZETAq",
+      "fields": {
+        "Field 5": "Weather radar data, worldwide. Tile server and single radar images.",
+        "Field 4": "https://www.rainviewer.com/api.html",
+        "CORS": "Yes",
+        "Category": "Weather",
+        "Auth": "No",
+        "HTTPS": "Yes",
+        "Email Address(If you are donating us)": "support@djncds.com",
+        "Name": "RainViewer"
+      },
+      "createdTime": "2019-12-27T16:13:22.000Z"
+    }
+  ],
+  "offset": "itrDEbZn4785mWTzk/rec6HO0IguaNZETAq"// highlight-line
+}
+```
+
+> *If you get `offset` into your request it means you more records. So, you can get more records by passing `offset` params*
+
+Pagination with `offset`.
+
+```javascript
+async function getRecords(){
+    const pageSize = 10 // if you want to apply pagination
+    const response = await fetch('https://api.airtable.com/v0/<base_id>/<table_name>?api_key=<api_key>&pageSize=' + pageSize + '&offset=<offset_code>');
     const myJson = await response.json();
     console.log(JSON.stringify(myJson));
 }
@@ -63,6 +101,7 @@ async function getRecord(){
 }
 getRecord()
 ```
+
 
 ### Create Records
 
@@ -101,53 +140,45 @@ createRecords();
 ```
 
 ## Node.js
-Airtable have official client library for Nodejs.
+Airtable have official client library for Nodejs but they make it more complex. So, I'll suggest you to use REST API endpoint like in CURL with axios. There are many open source http request library but I'm using `axios` here.
 
 ```shell
-npm i --save airtable
+npm i --save axios
 or
-yarn add airtable
+yarn add axios
 ```
 
 ### Get all records
 
 ```javascript
-const Airtable = require('airtable');
+const axios = require("axios");
 
-const base = new Airtable({ apiKey: <api_key> }).base(<base_id>);
-
-const options = {
-    view: "Grid view",
-    pageSize: pageSize
-};
-
-const limit = "<limit>";
-const page = 1;
-const processPage = (partialRecords, fetchNextPage) => {
-    records = [...records, ...partialRecords];
-    fetchNextPage();
-};
-const processRecords = err => {
-    if (err) {
-        res.status(404).send(err);
-        return;
-    }
-    const count = records.length;
-    const offset = page * limit - limit;
-
-    const models = records
-        .map(record => record._rawJson)
-        .slice(offset, limit * page);
-    res.json(models);
-};
-
-base(app.apis_info.table_name)
-    .select(options)
-    .eachPage(processPage, processRecords);
-
-
+axios
+    .get("https://api.airtable.com/v0/<base_id>/<table_name>?api_key=<api_key>")
+    .then(function(response) {
+        console.log(response.data);
+    })
+    .catch(function(error) {
+        console.log(error);
+    });
 ```
 
+> *If you get `offset` into your request it means you more records. So, you can get more records by passing `offset` params*
+
+Pagination with `offset`.
+
+```javascript
+const axios = require("axios");
+
+axios
+    .get("https://api.airtable.com/v0/<base_id>/<table_name>?api_key=<api_key>")
+    .then(function(response) {
+        console.log(response.data);
+    })
+    .catch(function(error) {
+        console.log(error);
+    });
+```
 ### Get a records
 
 ```javascript

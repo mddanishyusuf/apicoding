@@ -11,8 +11,9 @@ const ToolsSection = ({ data }) => {
     return (
         <Layout>
             <SEO
-                title="Public APIs Docs in Simple Way"
-                description="APIs docs is an website for public and free APIs simple documentation. How to use Public APIs and INtegrate into React, Angular, JAMstack Applications in easy and simple way"
+                title="Free APIs tools for testing and developments"
+                description="Curated collections of APIs tools are requires into apis developments and testing. Free, Windows, MacOS and Linux APIs testing and developments tools"
+                keywords={['tools', 'testing', 'developments', 'free', 'windows', 'macos', 'linux', 'collections']}
             />
             <div className="apis-container">
                 <div className="apis-items">

@@ -1,8 +1,8 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 
-import BlogCard from '../blogCard'
-import '../../styles/blog-card.scss'
+import LearnCard from '../learnCard'
+import '../../styles/learn-card.scss'
 
 const LearningSection = () => {
     const { allMarkdownRemark } = useStaticQuery(
@@ -47,11 +47,12 @@ const LearningSection = () => {
                                 style={{ backgroundColor: node.frontmatter.featuredImage.colors.lightVibrant }}
                                 key={key}
                             >
-                                <BlogCard node={node} />
+                                <LearnCard node={node} />
                             </div>
                         ))}
                 </div>
             </div>
+            <br />
         </div>
     )
 }
