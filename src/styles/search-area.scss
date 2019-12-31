@@ -1,0 +1,31 @@
+.search-area {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    max-width: 400px;
+    background-color: #fff;
+    z-index: 99;
+    height: 100vh;
+    overflow-y: scroll;
+    -webkit-transition: width 0.5s ease-in-out;
+    -moz-transition: width 0.5s ease-in-out;
+    -o-transition: width 0.5s ease-in-out;
+    transition: width 0.5s ease-in-out;
+    .head {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        .close-drawer {
+            color: #000
+        }
+    }
+}
+
+.search-area-closed {
+    width: 0px;
+
+}
+
+.search-area-open {
+    width: 400px;
+
+}

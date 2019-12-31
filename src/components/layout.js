@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import '../styles/layout.scss'
 
 const Layout = ({ children }) => {
+    // console.log(props)
     const data = useStaticQuery(graphql`
         query SiteTitleQuery {
             site {

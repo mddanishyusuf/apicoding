@@ -1,0 +1,25 @@
+.pagination-div {
+    text-align: center;
+    margin: 30px 0px;
+    .pagination-item{
+        ul {
+            padding: 0;
+            margin: 0;
+            a {
+                font-weight: 500;
+                color: #407350;
+            }
+            li {
+                list-style: none;
+                display: inline-block;
+                padding: 3px 10px;
+                border-radius: 50% 40% 45% 50% / 40% 50% 55% 40%;
+            }
+            li.active {
+                border: 1px solid #407350;
+                border-radius: 50% 40% 45% 50% / 40% 50% 55% 40%;
+                background-color: #9cd3ae;
+            }
+        }
+    }
+}

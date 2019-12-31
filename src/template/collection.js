@@ -1,14 +1,15 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import APICard from '../components/apiCard'
+import Pagination from '../components/pagination'
 import CollectionImg from '../images/collection.png'
 
-const CollectionSection = ({ data }) => {
+const CollectionSection = ({ data, pageContext }) => {
     const list = data.allPaApis.nodes
-
+    const page = pageContext.pageNumber
     return (
         <Layout>
             <SEO
@@ -33,7 +34,18 @@ const CollectionSection = ({ data }) => {
                     <img src={CollectionImg} width="40px" alt="Learning" />
                     API Collections
                 </h4>
-                <p>1000+ public apis colleactions to use into your applications.</p>
+                <ul className="breadcrumb-box">
+                    <li>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li>{page === 1 ? <span>public apis</span> : <Link to="/public-apis">public apis</Link>}</li>
+                    {page > 1 && (
+                        <li>
+                            <span>page {page}</span>
+                        </li>
+                    )}
+                </ul>
+                <br />
                 <br />
                 <div className="apis-items">
                     <div className="row">
@@ -44,6 +56,7 @@ const CollectionSection = ({ data }) => {
                                 </div>
                             ))}
                     </div>
+                    <Pagination {...pageContext} />
                 </div>
             </div>
         </Layout>

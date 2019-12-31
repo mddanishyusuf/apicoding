@@ -16,7 +16,6 @@ header {
                 font-size: 14px;
             }
 
-
         }
 
         .navbar-brand {
@@ -33,6 +32,13 @@ header {
     display: grid;
     grid-template-columns: 150px auto 200px;
     padding: 10px 0px;
+}
+
+.nav-menu-with-search {
+    display: grid;
+    grid-template-columns: 300px auto 200px;
+    padding: 10px 0px;
+    
 }
 
 .search-box, .mobile-search{

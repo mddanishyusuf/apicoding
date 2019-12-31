@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 import { GoBrowser } from 'react-icons/go'
 import { GiThink } from 'react-icons/gi'
 import { FaApple, FaTerminal, FaWindows, FaAndroid, FaAppStoreIos, FaConnectdevelop, FaDatabase } from 'react-icons/fa'
@@ -24,6 +25,31 @@ export const getHostname = function(url) {
     }
 
     return null
+}
+
+export const getSearch = async function(indices, query) {
+    const result = await axios({
+        method: 'post',
+        url: 'https://3ODBCR3ZKZ-dsn.algolia.net/1/indexes/*/queries',
+        headers: {
+            'X-Algolia-API-Key': process.env.ALGOLIA_SEARCH_KEY,
+            'X-Algolia-Application-Id': process.env.GATSBY_ALGOLIA_APP_ID,
+        },
+        data: {
+            requests: [
+                {
+                    indexName: 'API_CODING_TOOLS',
+                    params: `query=${query}`,
+                },
+                {
+                    indexName: 'API_CODING_APIS',
+                    params: `query=${query}`,
+                },
+            ],
+            strategy: 'none',
+        },
+    })
+    return result.data
 }
 
 export const getIconComp = function(name) {
@@ -103,4 +129,35 @@ export const getIconComp = function(name) {
         return <DiLinux />
     }
     return <GiThink />
+}
+
+export const pagination = function(c, m) {
+    const current = c
+    const last = m
+    const delta = 2
+    const left = current - delta
+    const right = current + delta + 1
+    const range = []
+    const rangeWithDots = []
+    let l
+
+    for (let i = 1; i <= last; i++) {
+        if (i == 1 || i == last || (i >= left && i < right)) {
+            range.push(i)
+        }
+    }
+
+    for (const i of range) {
+        if (l) {
+            if (i - l === 2) {
+                rangeWithDots.push(l + 1)
+            } else if (i - l !== 1) {
+                rangeWithDots.push('...')
+            }
+        }
+        rangeWithDots.push(i)
+        l = i
+    }
+
+    return rangeWithDots
 }

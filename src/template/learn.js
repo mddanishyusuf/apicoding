@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -7,8 +7,9 @@ import LearnCard from '../components/learnCard'
 import LearningImg from '../images/learning.png'
 import '../styles/learn-card.scss'
 
-const LearningSection = ({ data }) => {
+const LearningSection = ({ data, pageContext }) => {
     const list = data.allMarkdownRemark.nodes
+    const page = pageContext.pageNumber
 
     return (
         <Layout>
@@ -34,7 +35,19 @@ const LearningSection = ({ data }) => {
                     <img src={LearningImg} width="40px" alt="documentation" />
                     Learning
                 </h4>
-                <p>I make log about my APIs leanring as blog post</p>
+                <ul className="breadcrumb-box">
+                    <li>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li>{page === 1 ? <span>learning</span> : <Link to="/learn">learning</Link>}</li>
+                    {page > 1 && (
+                        <li>
+                            <span>page {page}</span>
+                        </li>
+                    )}
+                </ul>
+                <br />
+                <br />
                 <div className="blog-items">
                     <div className="blog-card-box">
                         {list.length > 0 &&

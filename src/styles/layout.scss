@@ -49,3 +49,28 @@ pre {
     margin: 0 auto;
     padding: 40px 0px;
 }
+
+.breadcrumb-box { 
+    list-style: none; 
+    overflow: hidden; 
+    padding: 0;
+    margin: 0;
+    li {
+        display: inline-block;
+        font-size: 13px !important;
+        margin-right: 5px;
+        a {
+            color: #fff;
+            padding: 4px 15px;
+            background-color: #464646;
+            border-radius: 5px;
+            border: 2px solid #fff;
+        }
+        span {
+            padding: 4px 15px;
+            background-color: #eee;
+            border-radius: 5px;
+            border: 2px solid #fff;
+        }
+    }
+  }

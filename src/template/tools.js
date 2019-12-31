@@ -1,12 +1,14 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import ToolCard from '../components/toolCard'
+import ToolsImg from '../images/tools.png'
 
-const ToolsSection = ({ data }) => {
+const ToolsSection = ({ data, pageContext }) => {
     const list = data.allPaTools.nodes
+    const page = pageContext.pageNumber
 
     return (
         <Layout>
@@ -16,6 +18,23 @@ const ToolsSection = ({ data }) => {
                 keywords={['tools', 'testing', 'developments', 'free', 'windows', 'macos', 'linux', 'collections']}
             />
             <div className="apis-container">
+                <h4>
+                    <img src={ToolsImg} width="40px" alt="Public APIs" />
+                    Tools
+                </h4>
+                <ul className="breadcrumb-box">
+                    <li>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li>{page === 1 ? <span>tools</span> : <Link to="/tools">tools</Link>}</li>
+                    {page > 1 && (
+                        <li>
+                            <span>page {page}</span>
+                        </li>
+                    )}
+                </ul>
+                <br />
+                <br />
                 <div className="apis-items">
                     <div className="row">
                         {list.length > 0 &&

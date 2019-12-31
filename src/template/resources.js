@@ -1,13 +1,14 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import ResourceCard from '../components/resourceCard'
 import ResourcesImg from '../images/resources.png'
 
-const ResourcesSection = ({ data }) => {
+const ResourcesSection = ({ data, pageContext }) => {
     const list = data.allPaResources.nodes
+    const page = pageContext.pageNumber
 
     return (
         <Layout>
@@ -31,7 +32,18 @@ const ResourcesSection = ({ data }) => {
                     <img src={ResourcesImg} width="40px" alt="resources" />
                     Resources
                 </h4>
-                <p>I love to collect good articles those I found on the internet</p>
+                <ul className="breadcrumb-box">
+                    <li>
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li>{page === 1 ? <span>resources</span> : <Link to="/resources">resources</Link>}</li>
+                    {page > 1 && (
+                        <li>
+                            <span>page {page}</span>
+                        </li>
+                    )}
+                </ul>
+                <br />
                 <br />
                 <div className="apis-items">
                     <div className="row">

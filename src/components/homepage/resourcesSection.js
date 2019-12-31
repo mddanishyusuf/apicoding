@@ -35,8 +35,6 @@ const ResourcesSection = () => {
 
     const list = allPaResources.nodes
 
-    console.log(list)
-
     return (
         <div className="apis-container">
             <div className="apis-items">

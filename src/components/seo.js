@@ -77,9 +77,9 @@ function SEO({ description, lang, meta, metadata, title, keywords }) {
                 },
             ].concat(meta)}
         >
-            <script async defer src="https://sa.apis-docs.com/app.js" />
+            <script async defer src="https://sa.apicoding.io/app.js" />
             <noscript>{`
-            <img src="https://sa.apis-docs.com/image.gif" alt=""/>
+            <img src="https://sa.apicoding.io/image.gif" alt=""/>
         `}</noscript>
         </Helmet>
     )

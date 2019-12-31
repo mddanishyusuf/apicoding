@@ -18,7 +18,8 @@ const APICard = ({ node }) => (
                 <Img
                     className="card-image"
                     width="30"
-                    alt={node.title}
+                    height="30"
+                    alt=""
                     src={[
                         `//logo.clearbit.com/${getHostname(node.link)}`,
                         'https://github.githubassets.com/favicon.ico',
