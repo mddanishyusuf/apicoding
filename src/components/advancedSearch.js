@@ -5,26 +5,32 @@ import { globalHistory } from '@reach/router'
 import SearchArea from './searchArea'
 import { getSearch } from '../utils/functions'
 
-const AdvancedSearch = ({ searchNow, showSearchPanel, closeDrawer, listData }) => {
+const AdvancedSearch = ({ headNavAdjust, normalNav }) => {
     const [searchQ, setSearchQ] = useState('')
+    const [searchDrawer, setSearchDrawer] = useState(false)
     const [searchResult, setSearchResult] = useState([])
     const path = globalHistory.location.pathname
 
     const searchNowAction = async e => {
         e.preventDefault()
+        setSearchDrawer(true)
         const result = await getSearch(path, searchQ)
         setSearchResult(result.results)
-        console.log('hey', result)
-        // setSearchData(result.results)
+        headNavAdjust('adjust')
     }
 
     const handleSearchInput = e => {
         setSearchQ(e.target.value)
     }
 
+    const closeDrawer = () => {
+        setSearchDrawer(false)
+        normalNav('normal')
+    }
+
     return (
         <>
-            <SearchArea searchResult={searchResult} />
+            <SearchArea searchResult={searchResult} searchDrawer={searchDrawer} closeDrawer={closeDrawer} />
 
             <Form inline onSubmit={searchNowAction}>
                 <InputGroup>

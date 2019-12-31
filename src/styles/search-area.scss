@@ -2,21 +2,26 @@
     position: fixed;
     top: 0px;
     left: 0;
-    max-width: 400px;
-    background-color: #fff;
     z-index: 99;
     height: 100vh;
     overflow-y: scroll;
-    -webkit-transition: width 0.5s ease-in-out;
-    -moz-transition: width 0.5s ease-in-out;
-    -o-transition: width 0.5s ease-in-out;
-    transition: width 0.5s ease-in-out;
-    .head {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        .close-drawer {
-            color: #000
+    .visible-section {
+        background-color: #fff;
+        box-shadow: 0px 8px 10px -5px rgba(0,0,0,0.2), 0px 16px 24px 2px rgba(0,0,0,0.14), 0px 6px 30px 5px rgba(0,0,0,0.12);
+        .head {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            .close-drawer {
+                color: #000
+            }
         }
+        .search-area-inner {
+            padding: 20px;
+        }
+    }
+    .blank-section {
+        background-color: rgba(0, 0, 0, 0.5);
     }
 }
 
@@ -26,6 +31,82 @@
 }
 
 .search-area-open {
-    width: 400px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 400px auto;
+}
 
+.search-widget {
+    .category {
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 17px;
+        margin: 0;
+        color: #2f2d2d;
+        padding: 15px 0px;
+    }
+}
+
+.api-head-content {
+    display: grid;
+    grid-template-columns: 30px auto 10px;
+    padding: 3px 0px;
+    img {
+        border-radius: 50%;
+        background-color: #fff;
+    }
+
+    .card-title {
+        padding: 0px 15px;
+        margin-bottom: 0;
+        a {
+            text-decoration: none;
+            cursor: pointer;
+
+            h2 {
+                font-size: 17px;
+                font-weight: 500;
+                line-height: 17px;
+                margin: 0;
+                color: #2f2d2d;
+            }
+        }
+
+        span {
+            font-size: 14px;
+            color: #4e4e4e;
+        }
+
+        .api-meta {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li {
+                display: inline-block;
+                font-size: 12px !important;
+                padding-right: 10px;
+                color: #4e4e4e;
+                a {
+                    color: #4e4e4e;
+                }
+            }
+        }
+
+    }
+}
+
+
+.resource-list {
+    text-decoration: none !important;
+    h2 {
+        font-size: 17px;
+        font-weight: 500;
+        line-height: 17px;
+        margin: 0;
+        color: #2f2d2d;
+    }
+    p {
+        font-size: 12px !important;
+        color: #4e4e4e;
+    }
 }

@@ -3,6 +3,7 @@ const learnQuery = `{
         nodes {
             objectID: id
             frontmatter {
+                path
                 title
                 excert
                 keywords
@@ -15,8 +16,14 @@ const collectionQuery = `{
     apis:  allPaApis{
         nodes {
             objectID: id
-            title
+            auth
+            cat_id
+            category
+            color
             description
+            link
+            slug
+            title
         }
     }
 }`
@@ -26,7 +33,13 @@ const toolsQuery = `{
         nodes {
             objectID: id
             description
+            image
+            logo
+            pricing
+            publisher
             title
+            type
+            url
         }
     }
 }`
@@ -35,8 +48,13 @@ const resourceQuery = `{
     resources:  allPaResources{
         nodes {
             objectID: id
+            author
+            image
             description
+            logo
+            publisher
             title
+            url
         }
     }
 }`
@@ -60,26 +78,6 @@ const resourceQuery = `{
 // })
 
 const queries = [
-    {
-        query: learnQuery,
-        transformer: ({ data }) => data.learn.nodes,
-        indexName: `API_CODING`,
-    },
-    {
-        query: collectionQuery,
-        transformer: ({ data }) => data.apis.nodes,
-        indexName: `API_CODING`,
-    },
-    {
-        query: toolsQuery,
-        transformer: ({ data }) => data.tools.nodes,
-        indexName: `API_CODING`,
-    },
-    {
-        query: resourceQuery,
-        transformer: ({ data }) => data.resources.nodes,
-        indexName: `API_CODING`,
-    },
     {
         query: learnQuery,
         transformer: ({ data }) => data.learn.nodes,

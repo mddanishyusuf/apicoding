@@ -27,7 +27,73 @@ export const getHostname = function(url) {
     return null
 }
 
-export const getSearch = async function(indices, query) {
+function getIndces(pathname, query) {
+    const type = pathname.split('/')[1]
+    const paramObjArray = []
+    if (type === '') {
+        paramObjArray.push(
+            {
+                indexName: 'API_CODING_APIS',
+                params: `query=${query}`,
+            },
+            {
+                indexName: 'API_CODING_LEARN',
+                params: `query=${query}`,
+            },
+            {
+                indexName: 'API_CODING_TOOLS',
+                params: `query=${query}`,
+            },
+            {
+                indexName: 'API_CODING_RESOURCES',
+                params: `query=${query}`,
+            }
+        )
+    } else if (type === 'public-apis') {
+        paramObjArray.push({
+            indexName: 'API_CODING_APIS',
+            params: `query=${query}`,
+        })
+    } else if (type === 'learn') {
+        paramObjArray.push({
+            indexName: 'API_CODING_LEARN',
+            params: `query=${query}`,
+        })
+    } else if (type === 'tools') {
+        paramObjArray.push({
+            indexName: 'API_CODING_TOOLS',
+            params: `query=${query}`,
+        })
+    } else if (type === 'resources') {
+        paramObjArray.push({
+            indexName: 'API_CODING_RESOURCES',
+            params: `query=${query}`,
+        })
+    } else {
+        paramObjArray.push(
+            {
+                indexName: 'API_CODING_APIS',
+                params: `query=${query}`,
+            },
+            {
+                indexName: 'API_CODING_LEARN',
+                params: `query=${query}`,
+            },
+            {
+                indexName: 'API_CODING_TOOLS',
+                params: `query=${query}`,
+            },
+            {
+                indexName: 'API_CODING_RESOURCES',
+                params: `query=${query}`,
+            }
+        )
+    }
+    return paramObjArray
+}
+
+export const getSearch = async function(pathname, query) {
+    const indices = getIndces(pathname, query)
     const result = await axios({
         method: 'post',
         url: 'https://3ODBCR3ZKZ-dsn.algolia.net/1/indexes/*/queries',
@@ -36,16 +102,7 @@ export const getSearch = async function(indices, query) {
             'X-Algolia-Application-Id': process.env.GATSBY_ALGOLIA_APP_ID,
         },
         data: {
-            requests: [
-                {
-                    indexName: 'API_CODING_TOOLS',
-                    params: `query=${query}`,
-                },
-                {
-                    indexName: 'API_CODING_APIS',
-                    params: `query=${query}`,
-                },
-            ],
+            requests: indices,
             strategy: 'none',
         },
     })
