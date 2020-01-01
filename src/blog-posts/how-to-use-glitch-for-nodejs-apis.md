@@ -1,45 +1,77 @@
 ---
-path: "/how-to-use-glitch-for-nodejs-apis"
-date: "2019-10-04"
-title: "How to use glitch for NodeJS APIs"
+path: "/how-to-use-glitch-to-build-nodejs-apis"
+date: "2020-01-01"
+updated_date: "2020-01-01"
+title: "How to use glitch to build Node.js APIs"
 excert: 'If you building any application based on the google apis service then you need private key and client email to access their services.'
-keywords: ['glitch','nodjes', 'apis']
+keywords: ['glitch','nodjes', 'apis', 'free']
 officialDocsLink: 'https://airtable.com/api'
 author: "Mohd Danish"
 twitter: "https://twitter.com/mddanishyusuf"
 authorPic: "./authors/mddanishyusuf.png"
-featuredImage: "./images/3.jpg"
+featuredImage: "./images/glitch-homepage.png"
 ---
 
-If you building any application based on the google apis service then you need private key and client email to access their services.
+Nowadays building nodejs API in the browser is so easy with Glitch and you can also be hosted for free. I'm a big fan of this tool and using glitch API into my projects. You don't need to install any tools, you just need a browser with the internet.
 
-To build Google Analytics API you need three values `Client Email`, `Private Key` & `View ID`
+Let's start in short.
 
-- Go here [Google Analytics Reporting API](https://console.cloud.google.com/projectselector2/apis/api/analyticsreporting.googleapis.com/overview)
-- Select the project or make new project
-- Click on `Enable` to access Analytics API Services
-- Click on `Credentials` and `Create Credentials` with `Service Account`.
-- Follow the step those are required and `Create Key` with JSON type and `Done`
-- Save the credentials json file.
-- Important step -> Add `client_email` from JSON file into your Google Analytics Account go to `Admin`-> `User Management` and add the email address.
-- Get View ID ->  Google Analytics Account go to `Admin`-> `View` Tab -> `View Settings` -> Get View ID.
+- Create an account here <a href="https://glitch.com/" target="_blank" rel="noopener noreferrer">glitch.com</a>.
+- Create `New Project`
+- Select `hello-express` template. 
 
-Here is the example:
+![New Project](./images/glitch-editor.png)
 
-```json
-{
-  "type": "service_account",
-  "project_id": "nocodeapi-257512",
-  "private_key_id": "980c5bd6d331fd2bf3252d0bd0a2ae6033b854ca",
-  "private_key": "<A long private key>", // highlight-line
-  "client_email": "nocodeapi-857@nocodeapi-257512.iam.gserviceaccount.com", // highlight-line 
-  "client_id": "100000573787960595567",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/nocodeapi-857%40nocodeapi-257512.iam.gserviceaccount.com"
-}
+So, after creating a new express project you will see that view. this has all features in a single window. 
+
+Now go to `server.js` file and replace with this basic code.
+
+```javascript
+const express = require("express");
+const app = express();
+
+app.get("/", function(request, response) {
+    response.send({message: "Glitch is so powerful. 💪"})
+});
+
+const listener = app.listen(process.env.PORT, function() {
+    console.log("Your app is listening on port " + listener.address().port);
+});
 ```
 
-### Here is Video Version
-`video: https://www.youtube.com/embed/2Xc9gXyf2G4`
+There is only one `GET` route that `/` and you can use your nodejs APIs with glitch sub-domain url. `https://<project_name>.glitch.me/`
+
+Let's make an simple `POST` route where we send some data and will return as JSON. Add this new code snippts into `server.js`
+
+```javascript
+app.post("/say-hello", function(request, response) {
+    const {name, message} = request.query
+    response.send({name, message})
+});
+```
+
+If you send data as `query params` then you will recive into `request.query` & if you send into `body` then you will get through `request.body`.
+
+Now test `POST` call into Postman tool. URL: `https://<project_name>.glitch.me/say-hello`
+
+![Make Post call](./images/post-call-glitch.png)
+
+Here is the complete code URL. https://glitch.com/edit/#!/glitch-nodejs-api
+
+Here I'm listing all the features that will be useful to build and debug your nodejs APIs.
+
+### You can:
+- Make your glitch project private.
+- Remix your glitch project into a new project.
+- Invite others to edit your project.
+- Embed the project into your portfolio website.
+- Live view your project with a glitch endpoint. Ex: `https://<project_name>.glitch.me`
+- Format the files with one click.
+- View your APIs logs into the browser.
+- Import/Export into git.
+- Custom Domain.
+
+Yes, it's all free for you to build your project, learn & experiment. it's really fun to build things with no hassle.
+
+Thanks for reading my noob style tutorial. I hope this will help you to know something new.
+

@@ -75,6 +75,7 @@ export const pageQuery = graphql`
             filter: { fileAbsolutePath: { regex: "/(blog-posts)/.*\\\\.md$/" } }
             skip: $skip
             limit: $limit
+            sort: { fields: frontmatter___date, order: DESC }
         ) {
             nodes {
                 html

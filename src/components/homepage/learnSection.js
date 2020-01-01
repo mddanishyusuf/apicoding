@@ -8,7 +8,11 @@ const LearningSection = () => {
     const { allMarkdownRemark } = useStaticQuery(
         graphql`
             query {
-                allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/(blog-posts)/.*\\\\.md$/" } }, limit: 4) {
+                allMarkdownRemark(
+                    filter: { fileAbsolutePath: { regex: "/(blog-posts)/.*\\\\.md$/" } }
+                    limit: 4
+                    sort: { fields: frontmatter___date, order: DESC }
+                ) {
                     nodes {
                         html
                         frontmatter {

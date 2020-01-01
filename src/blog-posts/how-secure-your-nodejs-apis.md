@@ -8,7 +8,7 @@ officialDocsLink: 'https://airtable.com/api'
 author: "Mohd Danish"
 twitter: "https://twitter.com/mddanishyusuf"
 authorPic: "./authors/mddanishyusuf.png"
-featuredImage: "./images/4.jpg"
+featuredImage: "./images/glitch-homepage.png"
 ---
 
 If you building any application based on the google apis service then you need private key and client email to access their services.

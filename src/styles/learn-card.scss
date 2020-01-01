@@ -3,10 +3,12 @@
     margin: 0px auto;
     .blog-card-box {
         position: relative;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr) ) ;
         grid-gap: 40px;
+        display: grid;
         margin: 40px 0px;
+        @media screen and (min-width: 992px) {
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr) ) ;
+        }
         .card-image {
             width: 100%;
             img {
@@ -24,14 +26,18 @@
                 .blog-card {
                     display: grid;
                     grid-template-columns: 40% 60%;
+                    align-items: center;
                 }
         
                 .card-content {
-                    padding: 20px;
+                    padding: 5px 20px;
                     h2 {
                         font-size: 22px;
                         font-weight: 600;
                         color: #2f2d2d;
+                        @media screen and (max-width: 992px) {
+                            font-size: 16px;
+                        }
                     }
         
                     .keywords {

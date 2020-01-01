@@ -64,7 +64,7 @@ const AdvancedSearch = ({ headNavAdjust, normalNav }) => {
                         aria-describedby="basic-addon1"
                     />
                     <InputGroup.Prepend>
-                        <InputGroup.Text id="basic-addon1" className="search-btn">
+                        <InputGroup.Text onClick={searchNowAction} id="basic-addon1" className="search-btn">
                             Search
                         </InputGroup.Text>
                     </InputGroup.Prepend>

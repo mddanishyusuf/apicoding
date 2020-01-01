@@ -1,6 +1,6 @@
 ---
 path: "/how-to-enable-caching-with-redis-in-nodejs-apis"
-date: "2019-10-04"
+date: "2020-01-02"
 title: "Caching with redis in your NodeJS APIs"
 excert: 'If you building any application based on the google apis service then you need private key and client email to access their services.'
 keywords: ['caching','redis', 'nodejs', 'apis']
@@ -8,7 +8,7 @@ officialDocsLink: 'https://airtable.com/api'
 author: "Mohd Danish"
 twitter: "https://twitter.com/mddanishyusuf"
 authorPic: "./authors/mddanishyusuf.png"
-featuredImage: "./images/5.jpg"
+featuredImage: "./images/redis-homepage.png"
 ---
 
 If you building any application based on the google apis service then you need private key and client email to access their services.

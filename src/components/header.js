@@ -38,12 +38,11 @@ const Header = ({ siteTitle }) => {
                             </Nav>
                             <Nav>
                                 <Nav>
-                                    <a href="https://nocodeapi.com" target="_blank">
-                                        Feedback
-                                    </a>
-                                </Nav>
-                                <Nav>
-                                    <a href="https://nocodeapi.com" target="_blank">
+                                    <a
+                                        href="https://twitter.com/mddanishyusuf"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         Twitter
                                     </a>
                                 </Nav>
