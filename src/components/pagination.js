@@ -12,7 +12,7 @@ function Pagination({ pageNumber, total, limit, linkSchema }) {
             <div className="pagination-item">
                 <ul>
                     {pageNumber > 1 && (
-                        <Link to="/public-apis">
+                        <Link to={`/${linkSchema}`}>
                             <li>Previous</li>
                         </Link>
                     )}
@@ -21,7 +21,7 @@ function Pagination({ pageNumber, total, limit, linkSchema }) {
                         paginationArr.map((item, index) => {
                             if (item !== '...') {
                                 return (
-                                    <Link to={`${linkSchema}/${item}`} key={index}>
+                                    <Link to={`${linkSchema}/page/${item}`} key={index}>
                                         <li className={item === pageNumber ? 'active' : ''}>{item}</li>
                                     </Link>
                                 )
@@ -29,7 +29,7 @@ function Pagination({ pageNumber, total, limit, linkSchema }) {
                             return <li key={index}>{item}</li>
                         })}
                     {pageNumber < lastPage && (
-                        <Link to={`${linkSchema}/${pageNumber + 1}`}>
+                        <Link to={`${linkSchema}/page/${pageNumber + 1}`}>
                             <li>Next</li>
                         </Link>
                     )}

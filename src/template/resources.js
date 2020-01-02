@@ -4,6 +4,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import ResourceCard from '../components/resourceCard'
+import Pagination from '../components/pagination'
 import ResourcesImg from '../images/resources.png'
 
 const ResourcesSection = ({ data, pageContext }) => {
@@ -54,6 +55,7 @@ const ResourcesSection = ({ data, pageContext }) => {
                                 </div>
                             ))}
                     </div>
+                    <Pagination {...pageContext} />
                 </div>
             </div>
         </Layout>
@@ -64,7 +66,12 @@ export default ResourcesSection
 
 export const pageQuery = graphql`
     query($skip: Int, $limit: Int) {
-        allPaResources(filter: { title: { ne: null } }, skip: $skip, limit: $limit) {
+        allPaResources(
+            filter: { title: { ne: null } }
+            skip: $skip
+            limit: $limit
+            sort: { fields: published_at, order: DESC }
+        ) {
             nodes {
                 featuredImg {
                     childImageSharp {

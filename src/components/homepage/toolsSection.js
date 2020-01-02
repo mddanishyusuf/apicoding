@@ -7,7 +7,7 @@ const ToolsSection = () => {
     const { allPaTools } = useStaticQuery(
         graphql`
             query {
-                allPaTools(limit: 9, filter: { title: { ne: null } }) {
+                allPaTools(limit: 9, filter: { title: { ne: null } }, sort: { fields: added_date, order: DESC }) {
                     nodes {
                         added_date(fromNow: true)
                         author

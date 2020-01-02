@@ -54,7 +54,12 @@ export default ToolsSection
 
 export const pageQuery = graphql`
     query($skip: Int, $limit: Int) {
-        allPaTools(filter: { title: { ne: null } }, skip: $skip, limit: $limit) {
+        allPaTools(
+            filter: { title: { ne: null } }
+            skip: $skip
+            limit: $limit
+            sort: { fields: added_date, order: DESC }
+        ) {
             nodes {
                 added_date(fromNow: true)
                 author

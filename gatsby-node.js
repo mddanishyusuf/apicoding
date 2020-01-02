@@ -182,7 +182,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                     hasNextPage: index !== collectionChunks.length - 1,
                     hasPreviousPage: index !== 0,
                     total: COLLECTION_TOTAL_OBJECT,
-                    linkSchema: `/public-apis/page`,
+                    linkSchema: `/public-apis`,
                 },
             })
         }
@@ -198,7 +198,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                     hasNextPage: index !== collectionChunks.length - 1,
                     hasPreviousPage: index !== 0,
                     total: COLLECTION_TOTAL_OBJECT,
-                    linkSchema: `/public-apis/page`,
+                    linkSchema: `/public-apis`,
                 },
             })
         }
@@ -353,6 +353,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                     hasNextPage: index !== resourcesChunks.length - 1,
                     hasPreviousPage: index !== 0,
                     total: RESOURCES_TOTAL_OBJECT,
+                    linkSchema: `/resources`,
                 },
             })
         }
@@ -368,6 +369,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
                     hasNextPage: index !== resourcesChunks.length - 1,
                     hasPreviousPage: index !== 0,
                     total: RESOURCES_TOTAL_OBJECT,
+                    linkSchema: `/resources`,
                 },
             })
         }

@@ -7,7 +7,7 @@ const ResourcesSection = () => {
     const { allPaResources } = useStaticQuery(
         graphql`
             query {
-                allPaResources(limit: 8, filter: { title: { ne: null } }) {
+                allPaResources(limit: 8, filter: { title: { ne: null } }, sort: { fields: published_at, order: DESC }) {
                     nodes {
                         featuredImg {
                             childImageSharp {
