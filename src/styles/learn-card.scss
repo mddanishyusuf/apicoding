@@ -34,6 +34,8 @@
                     h2 {
                         font-size: 22px;
                         font-weight: 600;
+                        height: 53px;
+                        overflow: hidden;
                         color: #2f2d2d;
                         @media screen and (max-width: 992px) {
                             font-size: 16px;

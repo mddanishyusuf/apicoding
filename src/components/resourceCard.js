@@ -29,7 +29,7 @@ const ResourceCard = ({ node }) => (
             <p>{node.description}</p>
         </div>
         <div className="card-actions">
-            <div className="copy">Read Later</div>
+            {/* <div className="copy">Read Later</div> */}
             <div className="view">
                 <a href={node.url} target="_blank" rel="noopener noreferrer">
                     <ExternalLink size={12} /> View Now

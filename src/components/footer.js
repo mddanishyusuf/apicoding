@@ -92,7 +92,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="row bottom-links">
-                    <div className="col-md-6">© 2019 APIs DOcs. All rights reserved.</div>
+                    <div className="col-md-6">© 2019-{new Date().getFullYear()} API Coding. All rights reserved.</div>
                     <div className="col-md-6">
                         {/* <ul>
                             <li>

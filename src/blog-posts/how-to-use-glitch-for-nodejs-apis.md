@@ -1,9 +1,9 @@
 ---
 path: "/how-to-use-glitch-to-build-nodejs-apis"
-date: "2020-01-01"
+date: "2020-01-04"
 updated_date: "2020-01-01"
 title: "How to use glitch to build Node.js APIs"
-excert: 'If you building any application based on the google apis service then you need private key and client email to access their services.'
+excert: "Nowadays building nodejs API in the browser is so easy with Glitch and you can also be hosted for free. You don't need to install any tools, you just need a browser with the internet."
 keywords: ['glitch','nodjes', 'apis', 'free']
 officialDocsLink: 'https://airtable.com/api'
 author: "Mohd Danish"
@@ -73,5 +73,5 @@ Here I'm listing all the features that will be useful to build and debug your no
 
 Yes, it's all free for you to build your project, learn & experiment. it's really fun to build things with no hassle.
 
-Thanks for reading my noob style tutorial. I hope this will help you to know something new.
+Thanks for reading my noob style tutorial. I hope this will help you to know something new. So, if you have suggestions and feedback about this post then let me know. hello@mohddanish.me
 

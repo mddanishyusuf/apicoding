@@ -2,6 +2,7 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { Navbar, Nav } from 'react-bootstrap'
+import { Users } from 'react-feather'
 
 import AdvancedSearch from './advancedSearch'
 
@@ -30,13 +31,6 @@ const Header = ({ siteTitle }) => {
                         </div>
                         <Navbar>
                             <Nav className="mr-auto">
-                                {/* <Nav>
-                                    <a href="https://nocodeapi.com" target="_blank">
-                                        NoCodeAPI
-                                    </a>
-                                </Nav> */}
-                            </Nav>
-                            <Nav>
                                 <Nav>
                                     <a
                                         href="https://twitter.com/mddanishyusuf"
@@ -44,6 +38,18 @@ const Header = ({ siteTitle }) => {
                                         rel="noopener noreferrer"
                                     >
                                         Twitter
+                                    </a>
+                                </Nav>
+                            </Nav>
+                            <Nav>
+                                <Nav>
+                                    <a
+                                        href="https://twitter.com/mddanishyusuf"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="contribute"
+                                    >
+                                        <Users size={14} /> <span> Contribute</span>
                                     </a>
                                 </Nav>
                             </Nav>

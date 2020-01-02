@@ -1,14 +1,14 @@
 ---
-path: "/build-simple-api-with-nodejs"
+path: "/build-python-api-with-mongodb-deploy-heroku"
 date: "2020-01-03"
-title: "Build Simple API with Nodejs and MongoDB"
+title: "Builc Python API with MongoDB and Deploy on Heroku"
 excert: 'Getting started with NodeJS framework and build simeple REST APIs. You can access data from database, update, delete.'
-keywords: ['node','basic', 'api']
+keywords: ['nodejs','api', 'mongodb']
 officialDocsLink: 'https://airtable.com/api'
 author: "Mohd Danish"
 twitter: "https://twitter.com/mddanishyusuf"
 authorPic: "./authors/mddanishyusuf.png"
-featuredImage: "./images/mongodb-homepage.png"
+featuredImage: "./images/python-mongodb-heroku.png"
 ---
 
 I'm planning to write about this article soon.
