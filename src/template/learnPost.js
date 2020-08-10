@@ -73,6 +73,14 @@ export const pageQuery = graphql`
                 twitter
                 officialDocsLink
                 keywords
+                featuredImage {
+                    publicURL
+                    childImageSharp {
+                        fluid(maxWidth: 800) {
+                            ...GatsbyImageSharpFluid
+                        }
+                    }
+                }
                 authorPic {
                     publicURL
                     childImageSharp {

@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
+import featuredImage from '../images/apicoding.png'
 
 function SEO({ description, lang, meta, metadata, title, keywords }) {
     const { site } = useStaticQuery(
@@ -20,8 +21,10 @@ function SEO({ description, lang, meta, metadata, title, keywords }) {
         `
     )
 
+    console.log(metadata)
+
     const metaDescription = description || metadata.excert
-    const metaImage = metadata.featuredImage === undefined ? site.siteMetadata.image : metadata.featuredImage.publicURL
+    const metaImage = metadata.featuredImage === undefined ? featuredImage : metadata.featuredImage.publicURL
 
     return (
         <Helmet
