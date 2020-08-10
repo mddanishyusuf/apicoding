@@ -4,7 +4,6 @@ import { graphql, Link } from 'gatsby'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import LearnCard from '../components/learnCard'
-import LearningImg from '../images/learning.png'
 import '../styles/learn-card.scss'
 
 const LearningSection = ({ data, pageContext }) => {
@@ -30,11 +29,6 @@ const LearningSection = ({ data, pageContext }) => {
                 ]}
             />
             <div className="blog-container">
-                <br />
-                <h4>
-                    <img src={LearningImg} width="40px" alt="documentation" />
-                    Learning
-                </h4>
                 <ul className="breadcrumb-box">
                     <li>
                         <Link to="/">Home</Link>

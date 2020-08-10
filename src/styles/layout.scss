@@ -5,12 +5,13 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif !important;
+    font-family: 'Lexend Deca', sans-serif;
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
     text-rendering: optimizeLegibility;
+    background-color: #efefef;
 }
 
 p, ul li, pre, code {
@@ -34,6 +35,16 @@ pre {
         padding: 3px 15px;
         background-color: #fff;
         border-radius: 10px;
+    }
+}
+
+.main-conatiner {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 0px 40px;
+    @media screen and (max-width: 700px) {
+        padding: 0px 10px;
     }
 }
 

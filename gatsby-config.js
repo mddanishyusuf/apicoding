@@ -6,8 +6,8 @@ module.exports = {
         title: `API Coding`,
         description: `Clean and minimal documentation about Public APIs`,
         author: `@mddanishyusuf`,
-        siteUrl: `https://apis-docs.com`,
-        image: `/images/api-coding.png`,
+        siteUrl: `https://apicoding.io`,
+        image: `/images/apicoding.png`,
         twitterUsername: '@mddanishyusuf',
     },
     plugins: [
@@ -38,13 +38,13 @@ module.exports = {
         {
             resolve: `gatsby-plugin-manifest`,
             options: {
-                name: `apis-docs`,
-                short_name: `apis-docs`,
+                name: `apicoding`,
+                short_name: `apicoding`,
                 start_url: `/`,
                 background_color: `#663399`,
                 theme_color: `#663399`,
                 display: `minimal-ui`,
-                icon: `src/images/apis-docs-favicon.png`, // This path is relative to the root of the site.
+                icon: `src/images/favicon.png`, // This path is relative to the root of the site.
             },
         },
         `gatsby-plugin-sass`,
@@ -53,17 +53,9 @@ module.exports = {
             options: {
                 fonts: [
                     {
-                        family: `Poppins`,
-                        variants: [`400`, `500`, `600`, `700`],
+                        family: `Lexend Deca`,
                     },
                 ],
-            },
-        },
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                name: `docs-pages`,
-                path: `${__dirname}/src/docs-pages`,
             },
         },
         {
@@ -129,70 +121,6 @@ module.exports = {
                         },
                     },
                 ],
-            },
-        },
-        {
-            resolve: 'gatsby-source-apiserver',
-            options: {
-                // Type prefix of entities from server
-                typePrefix: 'pa__',
-
-                // The url, this should be the endpoint you are attempting to pull data from
-                url: `https://apicoding.glitch.me/entries?page=1&per_page=10000&sort=desc`,
-
-                method: 'get',
-
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-
-                data: {},
-
-                name: 'apis',
-
-                entityLevel: `docs`,
-
-                verboseOutput: true,
-            },
-        },
-        {
-            resolve: 'gatsby-source-apiserver',
-            options: {
-                // Type prefix of entities from server
-                typePrefix: 'pa__',
-
-                // The url, this should be the endpoint you are attempting to pull data from
-                url: `https://apicoding.glitch.me/get-tools`,
-
-                method: 'get',
-
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-
-                data: {},
-
-                name: 'tools',
-            },
-        },
-        {
-            resolve: 'gatsby-source-apiserver',
-            options: {
-                // Type prefix of entities from server
-                typePrefix: 'pa__',
-
-                // The url, this should be the endpoint you are attempting to pull data from
-                url: `https://apicoding.glitch.me/get-resources`,
-
-                method: 'get',
-
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-
-                data: {},
-
-                name: 'resources',
             },
         },
         {

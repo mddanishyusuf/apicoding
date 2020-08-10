@@ -43,10 +43,15 @@
                     }
         
                     .keywords {
+                        margin-bottom: 5px;
                         span {
-                            font-size: 13px;
-                            color: #4e4e4e;
+                            font-size: 11px;
+                            padding: 1px 3px;
+                            color: #777575;
                             padding-right: 5px;
+                            background-color: rgb(226, 226, 226);
+                            margin-right: 3px;
+                            border-radius: 4px;
                         }
                     }
         

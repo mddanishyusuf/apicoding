@@ -29,7 +29,7 @@ function SEO({ description, lang, meta, metadata, title, keywords }) {
                 lang,
             }}
             title={title}
-            titleTemplate={`%s | ${site.siteMetadata.title}`}
+            titleTemplate={`%s`}
             meta={[
                 {
                     name: `description`,
@@ -49,7 +49,7 @@ function SEO({ description, lang, meta, metadata, title, keywords }) {
                 },
                 {
                     property: `og:image`,
-                    content: metaImage,
+                    content: `https://apicoding.io${metaImage}`,
                 },
                 {
                     property: `og:type`,
@@ -73,7 +73,7 @@ function SEO({ description, lang, meta, metadata, title, keywords }) {
                 },
                 {
                     property: `twitter:image`,
-                    content: metaImage,
+                    content: `https://apicoding.io${metaImage}`,
                 },
             ].concat(meta)}
         >

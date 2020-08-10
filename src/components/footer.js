@@ -45,50 +45,12 @@ const Footer = () => {
                             Hey, I'm Mohd Danish
                         </Link>
                         <p>
-                            & Front-end Developer. I'm the curator and writer of this website. So, this is all my
-                            development experience about APIs.{' '}
-                            <a href="https://mohddanish.me/projects" target="_blank" rel="noopener noreferrer">
-                                View all my projects.
+                            & I build stuffs related with APIs. So, this is all my
+                            development experience about APIs and share all my tricks, hacks, and tutorial here. I share every new article on my twitter.{' '}
+                            <a href="https://twitter.com/mddanishyusuf" target="_blank" rel="noopener noreferrer">
+                                Follow me on twitter
                             </a>
                         </p>
-                        <div className="social-links">
-                            <ul>
-                                <li>
-                                    <a
-                                        href="https://twitter.com/mddanishyusuf"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <Twitter size={12} /> <span>Follow on Twitter</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="mailto:mddanishyusuf@gmail.com">
-                                        <Mail size={12} /> <span>Email Me</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col-md-2" />
-                    <div className="col-md-4 newsletter">
-                        <h3>Need weekly email for fresh contents?</h3>
-                        <form onSubmit={_handleSubmit}>
-                            <input
-                                type="email"
-                                name="email"
-                                value={email}
-                                onChange={emailHandle}
-                                placeholder="Yes, I'm sharing."
-                            />
-                            <button type="submit">Send Now</button>
-                        </form>
-                        <div className="warning-msg">
-                            {newsletterWarningMsg !== '' && <AlertCircle size={13} />} {newsletterWarningMsg}
-                        </div>
-                        <div className="warning-success">
-                            {newsletterSuccessMsg !== '' && <CheckCircle size={13} />} {newsletterSuccessMsg}
-                        </div>
                     </div>
                 </div>
                 <div className="row bottom-links">

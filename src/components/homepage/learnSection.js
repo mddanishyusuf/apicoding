@@ -10,7 +10,6 @@ const LearningSection = () => {
             query {
                 allMarkdownRemark(
                     filter: { fileAbsolutePath: { regex: "/(blog-posts)/.*\\\\.md$/" } }
-                    limit: 4
                     sort: { fields: frontmatter___date, order: DESC }
                 ) {
                     nodes {

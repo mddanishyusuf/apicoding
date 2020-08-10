@@ -36,13 +36,6 @@ export default function Template({
                                     </div>
                                 ))}
                             </div>
-                            <div className="edit-article">
-                                <a
-                                    href={`https://github.com/mddanishyusuf/apis-docs/tree/master/src/blog-posts${fileName}`}
-                                >
-                                    <Edit size={14} /> Edit
-                                </a>
-                            </div>
                         </div>
                     </div>
                     <div className="blog-content">
@@ -58,13 +51,6 @@ export default function Template({
                                     <h4>{frontmatter.author}</h4>
                                     <span>{frontmatter.twitter}</span>
                                 </div>
-                            </a>
-                        </div>
-                        <div className="edit-this-post">
-                            <a
-                                href={`https://github.com/mddanishyusuf/apis-docs/tree/master/src/blog-posts${fileName}`}
-                            >
-                                <Edit size={14} /> Edit this article
                             </a>
                         </div>
                     </div>
