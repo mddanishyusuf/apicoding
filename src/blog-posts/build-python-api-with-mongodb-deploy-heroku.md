@@ -1,7 +1,7 @@
 ---
 path: "/build-python-api-with-mongodb-deploy-heroku"
 date: "2020-01-03"
-title: "Builc Python API with MongoDB and Deploy on Heroku"
+title: "Build Python API with MongoDB and Deploy on Heroku"
 excert: 'Getting started with NodeJS framework and build simeple REST APIs. You can access data from database, update, delete.'
 keywords: ['nodejs','api', 'mongodb']
 officialDocsLink: 'https://airtable.com/api'

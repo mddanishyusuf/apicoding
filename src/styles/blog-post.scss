@@ -30,8 +30,11 @@
                     margin-left: 20px;
                 }
                 .keywords {
-                    display: flex;
-                    margin-left: 20px;
+                    display: none;
+                    @media screen and (min-width: 700px) {
+                        display: flex;
+                        margin-left: 20px;
+                    }
                     .keyword {
                         background-color: #f3f5f9;
                         border: 1px solid #f3f5f9;
@@ -40,8 +43,7 @@
                         font-size: 10px;
                         letter-spacing: .5px;
                         margin: 0 2px;
-                        padding: 3px 4px 2px;
-                        text-transform: uppercase;
+                        padding: 1px 5px;
                         white-space: nowrap;
                     }
                 }

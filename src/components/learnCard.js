@@ -12,7 +12,7 @@ const LearnCard = ({ node }) => {
         <Link to={`/${card.path}`}>
             <div className="blog-card">
                 <div className="card-image">
-                    <Img fluid={card.featuredImage.childImageSharp.fluid} objectFit="cover" objectPosition="50% 50%" />
+                    <Img fluid={card.featuredImage.childImageSharp.fluid} objectFit="center" objectPosition="50% 50%" />
                 </div>
                 <div className="card-content">
                     <div className="keywords">
