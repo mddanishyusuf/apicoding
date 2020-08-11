@@ -45,8 +45,7 @@ const Footer = () => {
                             Hey, I'm Mohd Danish
                         </Link>
                         <p>
-                            & I build stuffs related with APIs. So, this is all my
-                            development experience about APIs and share all my tricks, hacks, and tutorial here. I share every new article on my twitter.{' '}
+                            & I build stuff related to APIs. So, this is all my development experience about APIs and I share all my tricks, hacks, and tutorial here. I share lots of things on my twitter.{' '}
                             <a href="https://twitter.com/mddanishyusuf" target="_blank" rel="noopener noreferrer">
                                 Follow me on twitter
                             </a>
