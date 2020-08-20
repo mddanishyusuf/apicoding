@@ -20,6 +20,8 @@ const Layout = ({ children }) => {
     `)
 
     return (
+        <>
+        <div className="banner" style={{backgroundColor: '#ffcd57', textAlign: 'center', lineHeight: '16px !important'}}><p style={{marginBottom: 0}}><span style={{backgroundColor: "#000", padding: "2px 5px", color: '#fff', fontSize: 11, marginRight: 10, borderRadius: 4}}>new</span><a  style={{color: '#000'}} href="https://public-apis.io/learn" target="_blank">API courses for begineers</a></p></div>
         <div className="main-conatiner">
             <Header siteTitle={data.site.siteMetadata.title} />
             <div>
@@ -28,6 +30,7 @@ const Layout = ({ children }) => {
                 <Footer />
             </div>
         </div>
+        </>
     )
 }
 
