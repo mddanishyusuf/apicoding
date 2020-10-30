@@ -1,6 +1,6 @@
 ---
 path: "/build-simple-api-with-nodejs"
-date: "2020-01-03"
+date: "2020-10-30"
 title: "Build Simple API with Nodejs and MongoDB"
 excert: 'Getting started with NodeJS framework and build simeple REST APIs. You can access data from MongoDB database, update, delete.'
 keywords: ['node','basic', 'api']
