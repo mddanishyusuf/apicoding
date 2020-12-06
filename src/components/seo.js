@@ -81,6 +81,7 @@ function SEO({ description, lang, meta, metadata, title, keywords }) {
             ].concat(meta)}
         >
             <script async defer src="https://sa.apicoding.io/app.js" />
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet"/>
             <noscript>{`
             <img src="https://sa.apicoding.io/image.gif" alt=""/>
         `}</noscript>

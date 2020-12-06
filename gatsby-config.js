@@ -49,16 +49,6 @@ module.exports = {
         },
         `gatsby-plugin-sass`,
         {
-            resolve: `gatsby-plugin-prefetch-google-fonts`,
-            options: {
-                fonts: [
-                    {
-                        family: `Lexend Deca`,
-                    },
-                ],
-            },
-        },
-        {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `blog-posts`,
